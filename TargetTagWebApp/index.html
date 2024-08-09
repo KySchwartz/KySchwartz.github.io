@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Target Tag</title>
+    <meta name="description" content="2D tractor driving game" />
+    <meta name="title" property="og:title" content="Tractor-Game" />
+    <meta property="og:type" content="Website" />
+    <!--<meta name="image" property="og:image" content="https://live.staticflickr.com/65535/50926567586_b4742d7df7_o.png" />-->
+    <meta name="description" property="og:description" content="2D game" />
+    <meta name="author" content="Kyle Schwartz" />
+</head>
+
+<body>
+    <!-- add in this audio when you reset canvas witout resetting page -->
+    <!-- <audio autoplay loop><source src="bensound-scifi.mp3" type="audio/mp3"></audio> -->
+    <div id="container">
+        <main>
+            <div id="canvas-container">
+                <canvas id="game"></canvas>
+                <!-- components for menus-->
+                 <div class="menu">
+                    <div class="levelMenu">
+                        <button id="easyBtn">Easy</button>
+                        <button id="medBtn">Medium</button>
+                        <button id="hardBtn">Hard</button>
+                    </div>
+
+                    <div class="modeMenu">
+                        <button id="singlePlayBtn">Single Player</button>
+                        <button id="twoPlayBtn">Two Player</button>
+                        <button id="multiPlayBtn">Multi Player</button>
+                    </div>
+                    <button id="select">Select</button>
+                 </div>
+                 
+                <!-- components for gameplay  -->
+                <p id="message"></p>
+                <button id="pause">||</button>
+                <button id="startBtn">Start</button>
+                <div class="joystick">
+                    <button class="up">↑</button>
+                    <button class="down">↓</button>
+                    <button class="left">←</button>
+                    <button class="right">→</button>
+                   <!-- <button class="upRight">y</button>-->
+                </div>
+                <div class="joystick2">
+                    <button class="up2">↑</button>
+                    <button class="down2">↓</button>
+                    <button class="left2">←</button>
+                    <button class="right2">→</button>
+                   <!-- <button class="upRight">y</button>-->
+                </div>
+                <div class="gameOverBtns">
+                    <button id="mainMenu">Main Menu</button>
+                    <button id="replay">Replay</button>
+                </div>
+            </div>
+            <img src=images/StartIMG.jpg id="startImage"></img>
+            <img src=images/AC2.png id="tractor"></img>
+            <img src=images/HF.png id="target"></img>
+            <img src=images/MF.png id="opponent"></img>
+            <img src="images/MF165.png" id="p2"></img>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

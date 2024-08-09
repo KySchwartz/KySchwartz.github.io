@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- This webpage was created by: Kyle Schwartz -->
+<html lang="en">
+<head>
+	<title>Beekeeping Equipment - Small Bussiness | Schwartzee Bees</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Schwartzee Bees has experience in beekeeping and is here to help you with all your beekeeping needs.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico.bmp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+<body>
+    
+    <div id="container">
+        
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">
+             <div id="menu-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="shop.html">Shop</a>
+                <a href="learning.html">Learning Center</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <a class="menu-icon" onclick="hamburger()">
+                <div>&#9776;</div>
+            </a>
+        </nav>
+
+        <!-- Use the header area for the website name or logo -->
+        <header id="schwartzee-logo">
+            <a href="index.html"><img src="images/Schwartzee-Bees-logo.png" alt="Schwartzee Bees logo"></a>
+        </header>
+
+        <!-- Tablet, Desktop Nav -->
+        <nav class="tablet-desktop">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="learning.html">Learning Center</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Use the main area to add the main content of the webpage -->
+        <main>
+            
+            <video controls poster="images/hero-image.jpg">
+                <source src="media/Schwartzee-Video.mp4" type="video/mp4">
+                <track src="media/captions.vtt" kind="captions" srclang="en" label="Captions">
+                <track src="media/captions.vtt" kind="descriptions" srclang="en" label="English Descriptions">
+                <p>Your browser does not support the video element</p>
+            </video>
+
+            <section id="beekeepers">
+                
+                <h1>We are beekeepers</h1>
+                <img src="images/we-are-beekeepers.JPG" alt="Working in a beehive" class="round">
+                <p>We are beekeepers too.  Schwartzee bees was founded in 2018 with a mission to help bees
+                and make equipment that is better for the bee and beekeepers.  Schwartzee bees is a small buissness based in Missouri, that started out with only two handmade hives, but has since grown to selling honey and other products.</p>
+                <ul class="tablet-desktop">
+                    <li>Beekeeping equipment</li>
+                    <li>Honey</li>
+                    <li>bee-related products</li>
+                </ul>
+                
+            </section>
+
+            <section id="equipment">
+                
+                <h1>Equipment</h1>
+                <img src="images/dramatic-hive.JPG" alt="Dramatic Beehive" class="round">
+                <p>Buy top qulity equipment such as</p>
+                <ul class="tablet-desktop">
+                    <li>Boxes</li>
+                    <li>Frames</li>
+                    <li>Foundations</li>
+                </ul>
+            </section>
+            
+            <section id="educated">
+                
+                <h1>Bee Educated</h1>
+                <img src="images/schwartzee-bee.jpg" alt="Cartoon bee giving thumbs up" class="round">
+                <p>Schwartzee Bees doesn't only provide services.  We also want to help you with any questions you may have.  Visit the Schwartzee Bee Learning Center for more information about:</p>
+                <ul class="tablet-desktop">
+                    <li>Getting Started</li>
+                    <li>A Year as a beekeeper</li>
+                    <li>Tips and Tricks</li>
+                </ul>
+            </section>
+            
+            <section id="starting" class="tablet-desktop">
+                
+                <h1>How we got started</h1>
+                <p>The following is how we began:</p>
+                <d1>
+                    <dt>Purchased Bees</dt>
+                    <dd>We bought two hives from our neighbor.  <span class="viewex" onclick="purchase()"> View Example.</span></dd>
+                    
+                    <dt>Cared for Bees</dt>
+                    <dd>We got our bees through their fist winter. <span class="viewex" onclick="caring()">View Video</span></dd>
+                    
+                    <dt>Did splits</dt>
+                    <dd>We did splits on the bees next spring. <span class="viewex" onclick="splits()">View How To Split</span></dd>
+                </d1>
+                
+                <video controls id="example">
+                    <source id="vid-src" src="vid" type="video/mp4">
+                    <track id="despsrc" src="des" kind="descriptions" srclang="en" label="English Descriptions">
+                    <p>Your browser does not support the video element</p>
+                </video>
+                
+                <p>New to beekeeping?  For a great introductory course visit <a href="perfectbee.com" target="_blank" class="external-link">perfectbee.com</a>.</p>
+                
+            </section>
+            
+        </main>
+
+        <!-- Use the footer to add webpage footer content -->
+        <footer>
+            
+            <div class="copyright">
+                <p>&copy; Copyright 2022. All Rights Reserved.</p>
+                <p><a href="mailto:schwartzeebees@bee.net">schwartzeebees@bee.net</a></p>
+            </div>
+            
+            <div class="social">
+                <a href=https://facebook.com target="blank"><img src="images/facebook-logo.png" alt="Facebook log"></a>
+                
+                <a href=https://twitter.com target="blank"><img src="images/twitter-logo.png" alt="Twitter logo"></a>
+            </div>
+            
+        </footer>
+        
+    </div>
+    
+    <script src="scripts/script.js"></script>
+
+</body>
+</html>
