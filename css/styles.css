@@ -1,3 +1,4 @@
+
 /*
 Author: Kyle Schwartz
 Date: 9/16/2022
@@ -14,7 +15,7 @@ body, header, nav, main, footer, h1, div, img, ul, figure, figcaption, section, 
 /* Style rules for body and images */
 body {
     background-color: #ccc;
-    background: linear-gradient(to right, #ffea00, #ccc);
+    background: linear-gradient(to right, rgb(255, 173, 173), rgb(255, 255, 169), rgb(148, 255, 148), rgb(175, 175, 255));
 }
 
 img, video {
@@ -43,23 +44,44 @@ header img {
     left:10%;
 }
 
+#news-header {
+    width: 100%;
+    background-color: #FFFF6E;
+    height: 20px;
+}
+
+#news-header h1{
+    font-size: 1em;
+    text-align: center;
+}
+
+#news-header a {
+    text-decoration: none;
+    color: black;
+}
+
 /* Style rules for hamburger menu */
 .mobile-nav a {
-    color: #ffea00;
+    color: red;
     font-family: 'Francois One', sans-serif;
     text-align: center;
     font-size: 2em;
     text-decoration: none;
     padding: 3%;
     display: block;
-    background-color: #000000;
+    background-color: #00eaff;
+    border-bottom: 1px solid green;
 }
 
 .mobile-nav a.menu-icon {
     display: block;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 20px;
+}
+
+.menu-icon {
+   /* border: 2px solid red;*/
 }
 
 /* Show mobile class, hide tablet-desktop class and menu-links id */
@@ -169,6 +191,8 @@ article:nth-of-type(2) {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 4px;
     /* Add any other styling you'd like */
 }
 
@@ -188,10 +212,20 @@ article:nth-of-type(2) {
     text-align: center;
 }
 
+.tile-info h3 {
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+}
+
 .tile-info p {
     font-size: 1rem;
     color: #777;
     text-align: left;
+}
+
+.tile-info a {
+    text-decoration: none;
 }
 
 .tile-info button {
@@ -206,6 +240,91 @@ article:nth-of-type(2) {
     cursor: pointer; /* Show a pointer cursor on hover */
     text-decoration: none;
 }
+
+.tile-info button:disabled {
+  background-color: #cccccc;
+  color: #999999;
+  opacity: 0.7;
+}
+
+
+
+.exp-tiles {
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.exp-tile {
+    position: relative;
+        flex-direction: row; /* Stack horizontally on small screens */
+        align-items: flex-start;
+        opacity: 0.9;
+    display: flex;
+    flex-direction: row;
+    align-items: left; /* Center content horizontally */
+    padding: 20px;
+    margin-bottom: 10px;
+    /*border: 1px solid #ddd;*/
+    /*border-radius: 8px;*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+    /* Add any other styling you'd like */
+    border-left: 4px dotted blue;
+    border-bottom: 4px dotted blue;
+}
+
+
+.exp-tile img {
+    max-width: 25%;
+    height: auto;
+    border-radius: 4px;
+    order: -1;
+}
+
+.exp-tile .tile-info {
+    width: 100%;
+}
+
+.exp-tile .tile-info h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: ;
+}
+
+.exp-tile .tile-info p {
+    font-size: 1rem;
+    color: #777;
+    text-align: left;
+}
+
+
+.exp-tile:before {
+  content: "";
+  border: 1px solid #d3d3d3;
+  align-self: stretch;
+}
+
+
+.exp-tile .tile-info button {
+    display: block;
+    margin:auto;
+    background-color: white;
+    color: rgb(255, 0, 0);
+    font-size: 1em; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: 2px solid black; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+.exp-tile .tile-info button:disabled {
+    background-color: #cccccc;
+    color: #999999;
+    opacity: 0.7;
+  }
+
 
 #contact .contact-email-link {
     color: #ffbf00;
@@ -266,6 +385,294 @@ footer p a {
     text-decoration: none;
 }
 
+/* STYLE RULED MADE ON MOBILE */
+#about-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: white;
+    /* Add any other styling you'd like */
+}
+
+
+.about-btn {
+    display: block;
+    margin:auto;
+    background-color: yellow;
+    color: red;
+    font-size: 24px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: none; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+
+.about-flex-element {
+/*background-color: #f4f4f4;*/
+width: 100%;
+height:50px;
+margin: 10px;
+text-align: center;
+font-size: 40px;
+}
+
+
+
+.hero {
+  height: 500px; /* Adjust height as needed */
+  background-image: url("images/wuc.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    position: relative;
+  color: white; /* For text color */
+    
+}
+
+.hero-image {
+    height:500px;
+    width:100%;
+   /*filter: blur(5px);*/
+    object-fit: cover
+            
+}
+
+.hero-content {
+   text-align: center;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+    width:80%;
+    animation: wipe-enter 1s ease-in-out;
+}
+
+.hero-content p {
+    font-weight: bold;
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 15px 25px 15px 25px;
+}
+
+.hero-content h1 {
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 15px;
+}
+
+.hero-content h2 {
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 50px;
+}
+
+.hero-content h3 {
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 50px;
+}
+
+.hero-content button {
+    color: white;
+    background-color: rgb(255 0 0 / 85%);
+        font-size: 18px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: none; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title-div {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+}
+
+.drop-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.drop-content {
+     width: 100%;
+  padding: 2px 0;
+  text-align: center;
+  background-color: whitesmoke;
+    transition: height 0.5s ease-in-out;
+  margin-top: 2px;
+    display: none;
+    animation-name: slide-animation;
+        
+        animation-delay: 3s;
+        
+        animation-duration: 5s;
+}
+
+.drop-content div {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid blue;
+    height: 100%;
+}
+
+.drop-content p {
+    padding: 5px;
+    margin: auto;
+}
+
+.description p {
+    text-align: left;
+}
+
+.stars{
+    padding: 5px;
+    margin: auto;
+}
+
+.arrow {
+ /* border: solid black;
+  border-width: 0 3px 3px 0;*/
+  display: inline-block;
+  padding: 3px;
+}
+
+/*This is a second arrow class used to prevent the class name selector on the javascript method from selecting the wrong element
+use this class when making a single drop-btn instance rather than a drop-table*/
+.arrow-spare {
+ /* border: solid black;
+  border-width: 0 3px 3px 0;*/
+  display: inline-block;
+  padding: 3px;
+}
+
+.checked {
+  color: orange;
+}
+
+.drop-btn {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 3px solid green;
+    height: 80px;
+} 
+
+.drop-btn img{
+    margin: auto;
+  padding: 2px;
+    height: 50px;
+}
+
+.drop-btn h1{
+    margin: auto;
+  
+  padding: 10px;
+}
+
+
+
+.drop-btn h2{
+    margin: auto;
+   text-align: center;
+  padding: 10px;
+}
+
+.drop-btn-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 3px solid green;
+    height: 80px;
+    background-color: lightblue;
+} 
+
+
+.drop-btn-title h1{
+    margin: auto;
+  padding: 10px;
+}
+
+#about-tiles {
+    display:none;
+}
+
+
+
+ @keyframes myAnimation {
+    /*from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }*/
+      0% { opacity: 0;}
+     25% {opacity: 0.25;}
+        50% { opacity: 0.5;}
+     75% {opacity: 0.75;}
+        100% { opacity: 1;/*height: 40px*/}
+}
+
+.animated {
+    animation: wipe-enter 1s ease-in-out;
+}
+
+/*animation courtesy of coolcssanimations.com */
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+
+@keyframes vertical-wipe-enter {
+	0% {
+		transform: scale(.025, 0);
+	}
+	50% {
+		transform: scale(.025, 1);
+	}
+}
+
+@keyframes spin-enter {
+	0% {
+	    transform: rotate(180deg);
+		transform: scale(0, .025);
+	}
+	50% {
+	    transform: rotate(90deg);
+		transform: scale(1, .025);
+	}
+}
+
+/*END OF RULES*/
+
 /* Media Query for Tablet Viewport */
 @media screen and (min-width: 630px), print {
     
@@ -287,23 +694,27 @@ footer p a {
     /* Tablet Viewport: Style rules for nav area */
     nav {
         padding: 1%;
-        margin-bottom: 1%;
-        background-color: #000000;
+        margin-bottom: 0%;
+        background-color: #00eaff;
+        border-bottom: 8px solid #6BCB77;
         position: relative;
         float: center;
         width: 100%;
+        height: auto;
         /*margin: 4em 1em 0 0;*/
         clear: both;
+        
     }
 
     .brand-logo{
         position:absolute;
         top: 50%;
-        left: 5%;
+        left: 10%;
         transform: translate(-50%, -50%);
         display:inline;
-        width: 40px;
-        height: 40px;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
         
     }
 
@@ -320,7 +731,7 @@ footer p a {
         font-size: 1.2em;
         font-family: Verdana, Arial, sans-serif;
         display: inline-block;
-        border-right: 1px solid #fff;
+        border-right: 1px solid green;
     }
 
     nav li:last-child {
@@ -330,9 +741,18 @@ footer p a {
     nav li a {
         padding: 0.1em 0.75em;
         display: block;
-        color: #ffea00;
+        color: red;
         text-decoration: none;
+        /*background-color: rgb(164, 234, 255);*/
     }
+    
+    
+#news-header {
+    /*display: block;*/
+    width: 100%;
+    
+    height: 20px;
+}
 
     /* Tablet Viewport: Style rules for main content */
     main ul {
@@ -414,6 +834,49 @@ footer p a {
         color: #666600;
         text-decoration: none;
         }
+    
+     .tile {
+        position: relative;
+        flex-direction: row; /* Stack horizontally on small screens */
+        align-items: flex-start;
+        opacity: 0.9;
+    }
+
+    .tile img {
+        padding: 40px;
+        max-width: 50%;
+    }
+    
+    .tile-info {
+        width: 100%;
+    }
+    
+      .tile-info-left {
+        width: 100%;
+          order:-1;
+    }
+    
+    .tile-info h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        vertical-align: top;
+    }
+    
+    .tile-info p {
+        font-size: 1rem;
+        color: #777;
+        padding-bottom: 40px;
+    }
+
+    .tile-info button {
+        position: absolute;
+        bottom:10px;
+        right:10px;
+    }
+    
+    .left {
+    order: -1;
+}
     
     /* Tablet Viewport: Style rules for table */
     table {
@@ -498,13 +961,8 @@ footer p a {
     }
 
     .brand-logo{
-        position:absolute;
-        top: 50%;
-        left: 5%;
-        transform: translate(-50%, -50%);
-        display:inline;
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
         
     }
     
@@ -518,12 +976,13 @@ footer p a {
         
     nav li a {
         padding: 0.5em 1em;
+        font-size: 1.5rem;
         }
     
     nav li a:hover {
-        color: #000000;
-        background-color: #ffea00;
-        transform: scale(1.2);
+        color: #00eaff;
+        background-color: red;
+        /*transform: scale(1.2);*/
     }
     
     /* Desktop Viewport: Style Rules for main content */
@@ -537,6 +996,30 @@ footer p a {
     
     article h3 {
         font-size: 1.75em;
+    }
+
+    .hero-content p {
+        font-size: 1.50em;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75em;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.75em;
+    }
+
+    .title-div {
+        font-size: 1.75em;
+    }
+
+    .tile img {
+        max-height: 400px;
+    }
+
+    .exp-tile img {
+        max-height: 300px;
     }
     
     .pic-text {
@@ -573,9 +1056,13 @@ footer p a {
         margin: 10px 0;
         vertical-align: top;
     }
+
+    .tile-info h3 {
+        font-size: 1.3rem;
+    }
     
     .tile-info p {
-        font-size: 1rem;
+        font-size: 1.2rem;
         color: #777;
     }
 
@@ -585,16 +1072,20 @@ footer p a {
         right:10px;
     }
     
+    /*
     .tile:hover {
         opacity: 1;
         box-shadow: 8px 8px 10px #808080;
         transform: translateY(10px);
     }
+    */
 
     .tile-info button:hover {
         background-color: rgb(19, 0, 139); /* Change the background color on hover */
         color: white; /* Change the text color on hover */
     }
+    
+
 
     #beekeepers, #equipment, #educated {
         width: 29%;
@@ -625,6 +1116,16 @@ footer p a {
     .btn {
         grid-column: 1 / span 3;
     }
+    
+    /*STYLE RULES MADE ON MOBILE*/
+    #about-nav {
+        position: relative;
+        flex-direction: row; /* Stack horizontally on small screens */
+        align-items: center;
+        justify-content: center;
+        opacity: 0.9;
+    }
+    /*END OF RULES*/
     
 }
 

@@ -15,6 +15,10 @@
 <body>
     
     <div id="container">
+    	
+    	<header id="news-header" style="display: block;">
+                <h1><a href="index.html">Computer Scientist</a></h1>
+        </header>
         
         <!-- Mobile Nav -->
         <nav class="mobile-nav">
@@ -22,7 +26,7 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
-                <a href="learning.html">Learning Center</a>
+                <a href="learn.html">Learn</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a class="menu-icon" onclick="hamburger()">
@@ -32,73 +36,67 @@
 
         <!-- Use the header area for the website name or logo -->
         <header id="schwartzee-logo">
-                <h1><a href="index.html"><img src="images/wuc.png" alt="logo"></a></h1>
+                <h1><a href="index.html"><img src="images/logo.png" alt="logo"></a></h1>
         </header>
 
         <!-- Tablet, Desktop Nav -->
         <nav class="tablet-desktop">
             <ul>
-                <li><img src="images/wuc.png" class="brand-logo" alt=""></li>
+                <li><img src="images/logo.png" class="brand-logo" alt=""></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="learning.html">Learning Center</a></li>
+                <li><a href="learn.html">Learn</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
         
-        <!-- Hero Image -->
-        <div id="hero" class="tablet-desktop">
-            <img src="images/wuc.png" alt="Hero image">
-        </div>
+       
+    	
+<!-- Hero Image -->  	
+<div class="hero">
+  <img class="hero-image" src="images/projects.jpg" alt="Hero Image">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Hello!</h1>
+    	  <h2>Thanks for stopping by</h2>
+      <p>I'm Kyle Schwartz, a Computer Information Systems student with education and experience in programming, research, design, and leadership.  Having completed my entire school career 100% online, I know how to make remote work, work.</p>
+    	  <h2>Want to learn more?</h2>
+      <button onclick=window.location.href="about.html">Click Here</button>
+    </div>
+ 		</div>
+</div>
+
+    	
+    	    
 
         <!-- Use the main area to add the main content of the webpage -->
-        <main>
+        <main style = "background-color: beige">
             
-                <div class="mobile">
+            
+        	<div class="title-div" style="background-color: white;">
+        		<h3>Ready to Explore?</h3>
+        		<h4>Check out some of these other pages!</h4>
+        	</div>
 
-                    <p>Welcome to my website.  Thanks for stopping by.  This website was made to showcase my skills, projects, and so you can get to know me a little better.  Feel free to look around.</p>
-
-                   <!-- <h3>Get more for less at Schwartzee Bees.</h3>
-                    <p>Call us today</p>
-                    <p class="tel-link"><a href="tel:5734839758">(573) 483_9758</a></p>
-
-                    <h4>Schwartzee Bees Hours:</h4>
-                    <ul class="hours">
-                        <li>Mon - Thu: 6:00am - 5:00pm</li>
-                        <li>Friday: 8:00am - 4:00pm</li>
-                        <li>Saturday: 7:00am - 3:00pm</li>
-                        <li>Sunday: Closed</li>
-                    </ul> -->
-
-                </div>
-
-            <div class="tablet-desktop">
-
-                    <p>Welcome to my website.  Thanks for stopping by.  This website was made to showcase my skills, projects, and so you can get to know me a little better.  Visit the <span class="action">Contact</span> page to get in touch or visit the <span class="action">Projects</span> page to see some of my past and current projects.</p>
-
-                    <p></p>
-
-                    <p></p>
-
-            </div>
             
             <div class="grid">
                 
                 <figure class="frame">
-                    <a href="shop.html"><img src="images/wuc.png" alt="tba"></a>
+                    <a href="about.html"><img src="images/me.jpg" alt="tba"></a>
                     <figcaption class="pic-text">About</figcaption>
                 </figure>
                 
                 <figure class="frame">
-                    <a href="projects.html"><img src="images/wuc.png" alt="tba"></a>
+                    <a href="projects.html"><img src="images/projects.jpg" alt="tba"></a>
                     <figcaption class="pic-text">Projects</figcaption>
                 </figure>
                 
                 <figure class="frame">
-                    <a href="contact.html"><img src="images/wuc.png" alt="tba"></a>
+                    <a href="contact.html"><img src="images/contact.jpg" alt="tba"></a>
                     <figcaption class="pic-text">Contact</figcaption>
                 </figure>
+            	
                 
             </div>
             

@@ -5,6 +5,8 @@
 	<title>Kyle Schwartz</title>
 	<meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
+	<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="images/favicon.ico.bmp">
@@ -15,14 +17,18 @@
 <body>
     
     <div id="container">
+    	
+    		<header id="news-header" style="display: block;">
+                <h1><a href="index.html">Computer Scientist</a></h1>
+        </header>
         
         <!-- Mobile Nav -->
         <nav class="mobile-nav">
              <div id="menu-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="shop.html">Projects</a>
-                <a href="learning.html">Learning Center</a>
+                <a href="projects.html">Projects</a>
+                <a href="learn.html">Learn</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a class="menu-icon" onclick="hamburger()">
@@ -32,93 +38,805 @@
 
         <!-- Use the header area for the website name or logo -->
         <header id="schwartzee-logo">
-                <h1><a href="index.html"><img src="images/wuc.png" alt="logo"></a></h1>
+                <h1><a href="index.html"><img src="images/logo.png" alt="logo"></a></h1>
         </header>
 
         <!-- Tablet, Desktop Nav -->
         <nav class="tablet-desktop">
             <ul>
-                <li><img src="images/wuc.png" class="brand-logo" alt=""></li>
+                <li><img src="images/logo.png" class="brand-logo" alt=""></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="shop.html">Projects</a></li>
-                <li><a href="learning.html">Learning Center</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="learn.html">Learn</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
         <!-- Use the main area to add the main content of the webpage -->
-        <main>
+        <main style="background-color: beige">
+        	
+        	  
+                <div class="tile" style="background-color:white;">
+                    <img src="images/me.jpg" alt="Tile Image" style="border-radius:50%">
+                    <div class="tile-info">
+                        <h2>About Me</h2>
+                       	<h3 style="color: Black">Hello, my name is Kyle Schwartz</h3>
+                        <p style="color: Black">
+                        	  I am pursuing a bachelor's degree in Computer Information Systems with a learning track in artificial intelligence and machine learning 
+							  at Southeast Missouri State University.  I have skills in several programming languages that can be viewed in the skills section below.  I am a avid learner always ready 
+							  for the next challenge.  I have worked in several leadership positions in both my high school and college careers and I am comfortable hosting meetings through meeting applications such as Zoom and Teams.  
+							  I prefer remote work.  My entire professional life has been conducted mainly online.  I have been an online learner from kindergarten through college so working remote is something that comes naturally to me.  
+							  If you would like to meet with me or talk to me in person feel free to send me an email.  I am always happy to speak with felow students our potentional employers.
+                        </p>
+       
+                    </div>
+                </div>
+        	
+        	      <div class="drop-btn" style="border: 3px solid black; background-color: white;"onclick = "drop('about-tiles', 'about-arrow');">
+        	      				 <h2>More About Me</h2>
+            		 	<img id="about-arrow" class="arrow-spare" src="images/arrow.png" alt="Tile Image">
+            		</div>
+        	
+        	<div id="about-tiles">
+        	        <div class="tile" style="background-color:white">
+                     <img src="images/beehive.JPG" alt="Tile Image" style="border-radius:50%">
+                    <div class="tile-info-left">
+                        <p>
+                        	  When I am not at work, school, or working on some new project, I can typically be found working on my family's small 
+							  farm.  In my free time, I enjoy gardening, fishing, hiking, swimming, beekeeping, and repairing antique tractors.  My family owns a small beekeeping business called Schwartzee Bees were we sell mostly honey.  
+							  We also have two large gardens, and frequently can and freeze our own fruits and vegetables.  
+							  I am someone who loves to be outdoors and I don't spend very much time inside.  I even typically do my work outside on a 
+							  laptop and portable monitor.  So, if you ever need advice on how to repair a carburetor, save tomato seeds, or if you need to buy some honey I have experience in that too.
+                        </p>
+       
+                    </div>
+        	        	 
+                </div>
+        	</div>
+        		
+        	<div id="about-nav">
+        		<div class="about-flex-element">
+        		  
+              <button onclick=window.location.href="#education" class="about-btn">Education</button>
+           
+        		</div>
+        			<div class="about-flex-element">
+          		
+              <button onclick=window.location.href="#skills" class="about-btn">Skills</button>
+           
+        			</div>
+        			<div class="about-flex-element">
+        		  
+              <button onclick=window.location.href="#experience" class="about-btn">Experience</button>
+           
+        			</div>
+        		<div class="about-flex-element">
+        		  
+              <button onclick=window.location.href="#awards" class="about-btn">Awards/Honors</button>
+           
+        			</div>
+        	</div>
             
-            <video controls poster="images/hero-image.jpg">
-                <source src="media/Schwartzee-Video.mp4" type="video/mp4">
-                <track src="media/captions.vtt" kind="captions" srclang="en" label="Captions">
-                <track src="media/captions.vtt" kind="descriptions" srclang="en" label="English Descriptions">
-                <p>Your browser does not support the video element</p>
-            </video>
 
-            <section id="beekeepers">
+
+
+            <section id="education">
                 
-                <h1>We are beekeepers</h1>
-                <img src="images/we-are-beekeepers.JPG" alt="Working in a beehive" class="round">
-                <p>We are beekeepers too.  Schwartzee bees was founded in 2018 with a mission to help bees
-                and make equipment that is better for the bee and beekeepers.  Schwartzee bees is a small buissness based in Missouri, that started out with only two handmade hives, but has since grown to selling honey and other products.</p>
-                <ul class="tablet-desktop">
-                    <li>Beekeeping equipment</li>
-                    <li>Honey</li>
-                    <li>bee-related products</li>
-                </ul>
+                <h1 class="title-div">Education</h1>
+            	
+            	<div class="exp-tiles">
+                 <div class="exp-tile">
+                    <img src="images/semo.png" alt="Tile Image">
+                	
+                    <div class="tile-info">
+                        <h3>Southeast Missouri State University</h3>
+                    	<h4>Bachelor's of Computer Information Systems</h4>
+                    	<h4>2022-2026</h4>
+                    	<h4>online</h4>
+                     
+                    	<button disabled>See Courses Taken</button>
+                  
+                    </div>
+                </div>
+            	</div>
+            		
                 
             </section>
 
-            <section id="equipment">
+            <section id="skills">
                 
-                <h1>Equipment</h1>
-                <img src="images/dramatic-hive.JPG" alt="Dramatic Beehive" class="round">
-                <p>Buy top qulity equipment such as</p>
-                <ul class="tablet-desktop">
-                    <li>Boxes</li>
-                    <li>Frames</li>
-                    <li>Foundations</li>
-                </ul>
+                <h1 class="title-div">Skills</h1>
+            	
+         <div class="drop-table">
+         	
+         	<div class="drop-btn-title">
+            			 
+            			 <h1>Computer Skills</h1>
+            		 	
+            		</div>
+         	
+         	 	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2022-8-20', this)">
+            			 <img class="drop-img" src="images/python.png" alt="Tile Image">
+            			 <h1>Python</h1>
+            		 	<img id="py-arrow" class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div id="drop-py" class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star"></span>
+               			 	<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I have an intermediate understanding of the standard Python code.  I am currently learning its libraries with an emphasis on coding with Python when working on machine learning and AI applications.  </p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	
+         	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2022-8-20', this)">
+            			 <img class="drop-img" src="images/html.png" alt="Tile Image">
+            			 <h1>HTML</h1>
+            		 	<img id="html-arrow" class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div id="drop-html" class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star-half-full checked"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            				<p>Portfolio Website, Small Business Website</p>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I have a good understanding of HTML and how to arrange a document in a logical manner that works well with CSS and JavaScript.</p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2022-8-20', this)">
+            			 <img class="drop-img" src="images/css.png" alt="Tile Image">
+            			 <h1> CSS</h1>
+            		 	<img id="css-arrow" class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div id="drop-css" class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date">August 2022</p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star-half-full checked"></span>
+                			<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            				<p>Portfolio Website, Small Business Website</p>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>CSS has gradually been getting easier the more I practice it.  After designing this portfolio website and working with several small side projects, I now have a good understanding of how the properties interact to create well designed responsive webpage elements.			</p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	
+         	 	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2023-1-15', this)">
+            			 <img class="drop-img" src="images/java.jpg" alt="Tile Image">
+            			 <h1>Java</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            				<p>Java FX Games, Java Command Line Applications</p>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>Java was used in 4 different college level courses to teach concepts such as GUI application design, data structure implementation, and algorithmn analysis.  
+            					I have a good understanding of the JavaFX library and I am familiar with much of the Java language.
+            				</p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         		 	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2022-10-3', this)">
+            			 <img class="drop-img" src="images/javascript.png" alt="Tile Image">
+            			 <h1>JavaScript</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  	<p class="experience"></p>  
+            			</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            				<p>Added Interactive Elements to Websites, JavaScript Web Apps</p>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I learned JavaScript after learning Java so many of the skills transfered well.  I  am experienced with several aspects of Javascript.  I will include a more detailed description at a later time. </p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	
+         		 	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2024-2-15', this)">
+            			 <img class="drop-img" src="images/c-sharp.png" alt="Tile Image">
+            			 <h1>C#</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            				<p>Over 27 scripts used in Splash Dash</p>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>C# is the language used primarly in Unity.  It is very similiar to Java so many of the skills transferred.  The ones that did not were easy to pick up.</p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2024-1-15', this)">
+            			 <img class="drop-img" src="images/unity.png" alt="Tile Image">
+            			 <h1>Unity</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star-half-full checked"></span>
+                			<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            				 <p>Splash Dash</p>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I have used Unity and C# to create an entire working multi-platform 2D game.  I have also practiced using Unity when working with 3D games.  I completed an in-depth course on Unity at SEMO.</p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2024-6-15', this)">
+            			 <img class="drop-img" src="images/c++.webp" alt="Tile Image">
+            			 <h1>C++</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star-half-full checked"></span>
+                			<span class="fa fa-star"></span>
+                			<span class="fa fa-star"></span>
+                			<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I recently started to study C++, but I currently am only familiar with the basics such as syntax and I am able to make simple programs. </p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	
+         	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2022-8-25', this)">
+            			 <img class="drop-img" src="images/excel.jpeg" alt="Tile Image">
+            			 <h1>Excel Software</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I took a full course through SEMO on the Pearson+ MyLabIT program.  I am familiar with advanced topics in Excel.  </p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+         	
+         	
+         	<!-- Start of skills table element -->
+            		<div class="drop-btn" onclick = "dateCalculator('2023-6-15', this)">
+            			 <img class="drop-img" src="images/access.jpeg" alt="Tile Image">
+            			 <h1>Access Software</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"></p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience"></p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star-half-full checked"></span>
+                			<span class="fa fa-star"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I took a full course through SEMO on the Pearson+ MyLabIT program.  I am familiar with advanced topics in Access.</p>
+            			</div>
+            			
+          		</div>
+         	<!-- End of skills table element -->
+
+			<!-- Start of skills table element -->
+				<div class="drop-btn" onclick = "dateCalculator('2024-8-29', this)">
+				<img class="drop-img" src="images/sql.png" alt="Tile Image">
+				<h1>SQL</h1>
+				<img class="arrow" src="images/arrow.png" alt="Tile Image">
+			</div>
+		
+			<div class="drop-content">
+				<div>
+					<h3>Date Started: </h3>
+					<p class="start-date"></p>
+				</div>
+				
+				<div>
+					<h3>Experience: </h3>
+									<p class="experience"></p>  
+					</div>
+				
+				<div>
+					<h3>Skill Rating: </h3>
+					<span class="stars">
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star"></span>
+					<span class="fa fa-star"></span>
+					<span class="fa fa-star"></span>
+					<span class="fa fa-star"></span>
+					</span>
+				</div>
+				
+				<div>
+					<h3>Projects: </h3>
+				</div>
+				
+				<div class="description">
+					<h3>Description:  </h3>
+					<p>I am learning SQL in a database course in the Fall 2024 semester.</p>
+				</div>
+				
+			</div>
+	<!-- End of skills table element -->
+
+	<!-- Start of skills table element -->
+				<div class="drop-btn" onclick = "dateCalculator('2024-8-29', this)">
+					<img class="drop-img" src="images/cloudcomputing.png" alt="Tile Image">
+					<h1>Cloud Computing</h1>
+					<img class="arrow" src="images/arrow.png" alt="Tile Image">
+				</div>
+			
+				<div class="drop-content">
+					<div>
+						<h3>Date Started: </h3>
+						<p class="start-date"></p>
+					</div>
+					
+					<div>
+						<h3>Experience: </h3>
+										<p class="experience"></p>  
+						</div>
+					
+					<div>
+						<h3>Skill Rating: </h3>
+						<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+						</span>
+					</div>
+					
+					<div>
+						<h3>Projects: </h3>
+					</div>
+					
+					<div class="description">
+						<h3>Description:  </h3>
+						<p>I am learning Cloud Computing in a cloud computing course in the Fall 2024 semester.</p>
+					</div>
+					
+				</div>
+		<!-- End of skills table element -->
+         	
+					<div class="drop-btn-title">
+								
+						<h1>Soft Skills</h1>
+								
+					</div>
+         	
+         	<!-- Start of skills table element -->
+            		<div class="drop-btn">
+            			 <img class="drop-img" src="images/leadership.jpg" alt="Tile Image">
+            			 <h1>Leadership</h1>
+            		 	<img class="arrow" src="images/arrow.png" alt="Tile Image">
+            		</div>
+         	 
+            		<div class="drop-content">
+            			<div>
+            				<h3>Date Started: </h3>
+            				<p class="start-date"> N/A </p>
+            			</div>
+            			
+            			<div>
+            				<h3>Experience: </h3>
+            			  			  	<p class="experience">I have served in several leadership positions since highschool.</p>  
+            				</div>
+            			
+            			<div>
+            				<h3>Skill Rating: </h3>
+            				<span class="stars">
+            			  	<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star half-full checked"></span>
+            				</span>
+            			</div>
+            			
+            			<div>
+            				<h3>Projects: </h3>
+							<p>President of the OSAC, President of the Ignite Christian Academy National Honor Society</p>
+            			</div>
+            			
+            			<div class="description">
+            				<h3>Description:  </h3>
+            				<p>I have learned many leadership skills through the various positions I have served in during both my high school and college years.  I have learned how to manage groups, host meetings, and keep teams on track, engaged, and organized.  </p>
+            			</div>
+            			
+          		</div>
+
+
+				<!-- Start of skills table element -->
+					<div class="drop-btn">
+					<img class="drop-img" src="images/speaking.png" alt="Tile Image">
+					<h1>Speaking</h1>
+					<img class="arrow" src="images/arrow.png" alt="Tile Image">
+				</div>
+			
+				<div class="drop-content">
+					<div>
+						<h3>Date Started: </h3>
+						<p class="start-date"> N/A </p>
+					</div>
+					
+					<div>
+						<h3>Experience: </h3>
+										<p class="experience">I get to speek at most online meetings that I manage.  I also gave several full speeches for an online public speaking course.</p>  
+						</div>
+					
+					<div>
+						<h3>Skill Rating: </h3>
+						<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+						</span>
+					</div>
+					
+					<div>
+						<h3>Projects: </h3>
+						<p>I get to speak on several occassions in my various leadership positions.  Typically though Zoom or another online platform.</p>
+					</div>
+					
+					<div class="description">
+						<h3>Description:  </h3>
+						<p>I have honed my speaking skills mainly by using them.  I speak often at various online meetings, and I took a public speaking class in college that taught me good principles to follow to improve my speaking.  </p>
+					</div>
+					
+				</div>
+         	
+      
             </section>
             
-            <section id="educated">
+            <section id="experience">
                 
-                <h1>Bee Educated</h1>
-                <img src="images/schwartzee-bee.jpg" alt="Cartoon bee giving thumbs up" class="round">
-                <p>Schwartzee Bees doesn't only provide services.  We also want to help you with any questions you may have.  Visit the Schwartzee Bee Learning Center for more information about:</p>
-                <ul class="tablet-desktop">
-                    <li>Getting Started</li>
-                    <li>A Year as a beekeeper</li>
-                    <li>Tips and Tricks</li>
-                </ul>
+                <h1 class="title-div">Experience</h1>
+                <div class="exp-tiles">
+
+                
+
+                <div class="exp-tile">
+                    <img src="images/nhs.png" alt="Tile Image">
+                	
+                    <div class="tile-info">
+                        <h3>President of the Ignite Christian Academy National Honor Society Chapter</h3>
+                    	<h4>National Honor Society</h4>
+                    	<h4>9/5/2021 - May/15/2022</h4>
+                    	<h4>Online</h4>
+                        <p>
+							As president, I was responsible for planning the overall direction, project, and message of that year's meetings based on feedback from the group and personal preference.  I 
+							was required to develope PowerPoints and give speeches to keep the group engaged.  I was also responsible for managing project completions and topics of discussion each month.  
+							This position required extensive use of PowerPoint presentations and Zoom meeting software as well as soft skills such as speaking and leadership.
+                        </p>
+                  
+                    </div>
+                </div>
+                	
+                	<div class="exp-tile">
+                    <img src="images/semo.png" alt="Tile Image">
+                    <div class="tile-info">
+                        <h3>President of the Online Student Advisory Council (OSAC)</h3>
+                    	<h4>Southeast Missouri State University</h4>
+                    	<h4>9/12/2023 - Present</h4>
+                    	<h4>Online</h4>
+                        <p>
+                            This group works to improve the online learning experience for students at SEMO.  Under the guidance of a SEMO online advisor, I help to plan meeting agenda, arrange the groups digital precense, and manage anything delegated to me during meetings by the chapter advisor.  
+							I volunteered for the office of president after the group was created by a SEMO online advisor in 2023.
+                        </p>
+                  
+                    </div>
+                </div>
+                	
+               </div>
+            </section>
+            	
+            	
+            	
+            	    <section id="awards">
+                
+                <h1 class="title-div">Awards</h1>
+            	
+            	<div class="exp-tiles">
+                 <div class="exp-tile">
+                    <img src="images/semo.png" alt="Tile Image">
+                	
+                    <div class="tile-info">
+                        <h3>SEMO President's List</h3>
+                    	<h4>Southeast Missouri State University</h4>
+                    	<h4>Fall 2022 - Fall 2024</h4>
+                    	
+                     
+                    	<!--<button>See Certificate</button>-->
+                  
+                    </div>
+                </div>
+
+				<div class="exp-tile">
+                    <img src="images/semo.png" alt="Tile Image">
+                	
+                    <div class="tile-info">
+                        <h3>SEMO Dean's List</h3>
+                    	<h4>Southeast Missouri State University</h4>
+                    	<h4>Fall 2022 - Fall 2024</h4>
+                    	
+                     
+                    	<!--<button>See Certificate</button>-->
+                  
+                    </div>
+                </div>
+            	</div>
+            		
+                
             </section>
             
-            <section id="starting" class="tablet-desktop">
-                
-                <h1>How we got started</h1>
-                <p>The following is how we began:</p>
-                <d1>
-                    <dt>Purchased Bees</dt>
-                    <dd>We bought two hives from our neighbor.  <span class="viewex" onclick="purchase()"> View Example.</span></dd>
-                    
-                    <dt>Cared for Bees</dt>
-                    <dd>We got our bees through their fist winter. <span class="viewex" onclick="caring()">View Video</span></dd>
-                    
-                    <dt>Did splits</dt>
-                    <dd>We did splits on the bees next spring. <span class="viewex" onclick="splits()">View How To Split</span></dd>
-                </d1>
-                
-                <video controls id="example">
-                    <source id="vid-src" src="vid" type="video/mp4">
-                    <track id="despsrc" src="des" kind="descriptions" srclang="en" label="English Descriptions">
-                    <p>Your browser does not support the video element</p>
-                </video>
-                
-                <p>New to beekeeping?  For a great introductory course visit <a href="perfectbee.com" target="_blank" class="external-link">perfectbee.com</a>.</p>
-                
-            </section>
+            
+
+
             
         </main>
 

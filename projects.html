@@ -15,6 +15,10 @@
 <body>
     
     <div id="container">
+    	
+    		<header id="news-header" style="display: block;">
+                <h1><a href="index.html">Computer Scientist</a></h1>
+        </header>
         
         <!-- Mobile Nav -->
         <nav class="mobile-nav">
@@ -22,7 +26,7 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
-                <a href="learning.html">Learning Center</a>
+                <a href="learn.html">Learn</a>
                 <a href="contact.html">Contact</a>
             </div>
             <a class="menu-icon" onclick="hamburger()">
@@ -32,27 +36,28 @@
 
         <!-- Use the header area for the website name or logo -->
         <header id="schwartzee-logo">
-                <h1><a href="index.html"><img src="images/wuc.png" alt="logo"></a></h1>
+                <h1><a href="index.html"><img src="images/logo.png" alt="logo"></a></h1>
         </header>
 
         <!-- Tablet, Desktop Nav -->
         <nav class="tablet-desktop">
             <ul>
-                <li><img src="images/wuc.png" class="brand-logo" alt=""></li>
+                <li><img src="images/logo.png" class="brand-logo" alt=""></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="learning.html">Learning Center</a></li>
+                <li><a href="learn.html">Learn</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
         <!-- Use the main area to add the main content of the webpage -->
-        <main>
+        <main style="background-color: rgb(250, 250, 250)">
             
-            <p>This page is currently being developed and may not function correctly, but feel free to look around anyway.</p>
-
-            <h1>Projects</h1>
+            <div class="title-div">
+                <h1 class="title-div">Projects</h1>
+        	    <!--<p>This page contains some of my projects</p>-->
+            </div>
             
             <div class="tiles">
 
@@ -67,10 +72,11 @@
                     </div>
                 </div>-->
 
-                <div class="tile">
+          <!--     <div class="tile">
                     <img src="images/wuc.png" alt="Tile Image">
                     <div class="tile-info">
                         <h2>Target Tag Web App</h2>
+                    	    <h3>July 2024 - Present</h3>
                         <p>A remake the JavaFX based Target Tag game.  This version is made using HTML, CSS, and Javascript with an emphasis on using the HTML Canvas.  Although not exact to the original, this version 
                             can be played on any device thanks to its mobile controls and browser based format.  As for the tractors, they were the only images I had on hand while desinging the game.  This game is still very 
                             much a work in progress and is here for TEST PURPOSES ONLY.  There are several bugs and UI issues that would need to be fixed before it could be considerd fully playable.
@@ -79,41 +85,59 @@
                             <button class="tile-btn">Play Game</button>
                         </a>
                     </div>
-                </div>
+                </div>  -->
                 
                 <div class="tile">
-                    <img src="images/wuc.png" alt="Tile Image">
+                    <img src="images/splashdashlogo.png" alt="Tile Image">
                     <div class="tile-info">
                         <h2>Splash Dash</h2>
+                        <h3>February 2024 - May 2024</h3>
                         <p>Made as part of my course IS360, Splash Dash was my first intro into game development using the Unity Game Engine.  As the course progresses, however, I got a little carried away.  
                             At the time of it's "completion" Splash Dash included an array of features including character selection, level selection, and mobile UI controls.  The game featured voice actors for 
                             each character and was completly hand-drawn and then scanned into Paint3D using a scanner to give the characters a classic cartoon feel.  Each character is animated as well.  The game was made to 
-                            help raise awarness of the growing problem of pollution.  Playing as an array of different sea creatures the player must collect as much trash as possible before time runs out!
+                            help raise awarness of the growing problem of pollution.  Playing as an array of different sea creatures the player must collect as much trash as possible before time runs out!  <a href="">  More Info page coming soon</a>
                         </p>
-                        <a href="SplashDashWebGLBuild/index.html">
+                     <!--  <a href="SplashDashWebGLBuild/index.html">
                             <button class="tile-btn">Play Splash Dash!</button>
+                        </a> -->
+                        <a href="https://simmer.io/@TippyTractor/splash-dash">
+                            <button class="tile-btn">Play Splash Dash on Simmer.io</button>
                         </a>
                     </div>
                 </div>
 
                 <div class="tile">
-                    <img src="images/wuc.png" alt="Tile Image">
+                    <img src="images/targettaglogo.png" alt="Tile Image">
                     <div class="tile-info">
                         <h2>Target Tag</h2>
+                    	    <h3>November 2023 - December 2023</h3>
                         <p>This was my first ever made from scratch, large, programming project.  It was made as a collaboration with two other students, but it went far beyong the 
                             requirments of the course project.  Target Tag is a JavaFX based game incorporating many features including a computer controlled opponent and randomly moving obstacles.  
-                            The game features several modes for difficulty adjustments and co-op modes.  Unfortunantly JavaFX cannot easily be ran in a browser right now, 
-                            so this game is only playable through an IDE.  I will hopefully be able to include a downloadable release for the game someday.</p>
+                            The game features several modes for difficulty adjustments and co-op modes.  The goal of the game was to collect 20 randomly spawning targets before your opponents.  
+                            Unfortunantly JavaFX cannot easily be ran in a browser, so this game is only playable through an IDE.  I will hopefully be able to include a downloadable release for the game someday.</p>
                         <a href="construction.html">
-                            <button class="tile-btn">Read More</button>
+                            <button class="tile-btn" disabled>Info Page Coming Soon</button>
                         </a>
                     </div>
                 </div>
 
                 <div class="tile">
-                    <img src="images/wuc.png" alt="Tile Image">
+                    <img src="images/tictactoelogo.png" alt="Tile Image">
+                    <div class="tile-info">
+                        <h2>Tic Tac Toe</h2>
+                    	    <h3>September 2023</h3>
+                        <p>A simple Tic Tac Toe game using HTML, CSS, and Javascript.</p>
+                        <a href="TicTacToe/Tic Tac Toe Test.html">
+                            <button class="tile-btn">Play Game</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <img src="images/schwartzeebeeswebsitelogo.png" alt="Tile Image">
                     <div class="tile-info">
                         <h2>Small Business Website</h2>
+                    	    <h3>September 2022 - November 2022</h3>
                         <p>This was a demo website I attempted to make for my familys' beekeeping business as part of my first Information Systems course.  This was my first ever experience 
                             with HTML, CSS, and Javascript.  It was never finished, but I do hope to possibly turn it into an eccomerce site someday.
                         </p>
@@ -123,18 +147,20 @@
                     </div>
                 </div>
 
-                <div class="tile">
-                    <img src="images/wuc.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Tic Tac Toe</h2>
-                        <p>A simple Tic Tac Toe game using HTML, CSS, and Javascript.</p>
-                        <a href="TicTacToe/Tic Tac Toe Test.html">
-                            <button class="tile-btn">Play Game</button>
-                        </a>
-                    </div>
-                </div>
+                
                 
             </div>
+        	
+        	<figure class="frame">
+                    <a href="https://github.com/KySchwartz"><img src="images/github.png" alt="tba"></a>
+                    <figcaption class="pic-text">GitHub Repositories</figcaption>
+                </figure>
+        	
+        	<div class="title-div">
+        	<h2>Want to see more projects?</h2>
+        		<p>Click below to see the projects that didn't make it to the portfolio</p>
+        	<button class="about-btn" onclick=window.location.href="funstuff.html">Fun Stuff</button>
+        	</div>
             
         </main>
 
