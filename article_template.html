@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- This webpage was created by: Kyle Schwartz -->
+<html lang="en">
+<head>
+	<title>Kyle Schwartz</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="libs/highlight/styles/vs.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico.bmp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+<body>
+    
+    <div id="container">
+    	
+        <!--Uses a JavaScript function to display navbar on server hosted pages-->
+    	<div w3-include-html="nav.html"></div>
+
+        <!-- Use the main area to add the main content of the webpage -->
+        <main style="background-color: rgb(250, 250, 250)">
+
+            <section class="article-section">
+                <h2>Section 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut   
+     labore et dolore magna aliqua. Ut enim ad minim veniam,   
+     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="image-container">
+                    <img src="images/targettaglogo.png"   
+     alt="Image 1">
+                    <div class="caption">Image 1 Caption</div>
+                </div>
+
+                <h3>Code Window Test</h3>
+                <div class="code-box" id="code-box-1">
+                    <button alt="copy">&#128203</button>
+                    <pre class="code-output" id="code-output"></pre>
+                </div>
+
+                <h3>Second Code Window Test</h3>
+                <div class="code-box" id="code-box-2">
+                    <button>&#128203</button>
+                    <pre class="code-output" id="code-output-2"></pre>
+                </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Test Video</h2>
+                <video controls poster="images/targettaglogo.png">
+                    <source src="media/Schwartzee-Video.mp4" type="video/mp4">
+                    <track src="media/captions.vtt" kind="captions" srclang="en" label="Captions">
+                    <track src="media/captions.vtt" kind="descriptions" srclang="en" label="English Descriptions">
+                    <p>Your browser does not support the video element</p>
+                </video>
+            </section>
+
+            <section class="article-section">
+                <h2>Test Slideshow</h2>
+                <div class="carousel-container">   
+
+                    <div class="carousel-slides">
+                      <div class="carousel-slide">
+                        <img src="images/me.jpg" alt="Image 1">
+                        <p class="caption">Caption 1</p>
+                      </div>
+                      <div class="carousel-slide">
+                        <img src="images/wuc.png" alt="Image 2">
+                        <p class="caption">Caption 2</p>
+                      </div>
+                      <div class="carousel-slide">
+                        <img src="images/bee-on-clover.JPG" alt="Image 3">
+                        <p class="caption">Caption 3</p>
+                      </div>
+                      <div class="carousel-slide">
+                        <img src="images/semo.png" alt="Image 3">
+                        <p class="caption">Caption 3</p>
+                      </div>
+                      <div class="carousel-slide">
+                        <img src="images/logo.png" alt="Image 3">
+                        <p class="caption">Caption 3</p>
+                      </div>
+                    </div>
+
+                    <button class="prev-btn">&#706</button>
+                    <button class="next-btn">&#707</button>
+
+                    <!-- Indicator container -->
+                    <div class="carousel-indicator"></div>
+
+                  </div>
+            </section>
+
+            <section class="article-section">
+                <h2>Accordian Test</h2>
+            </section>
+                <div class="accordion">
+                    <!-- Tab 1 -->
+                    <div class="tab">
+                        <div class="tab-heading">
+                            <h2>Tab 1 Title</h2>
+                        </div>
+                        <div class="tab-content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac
+                                ullamcorper lectus. Donec aliquet tristique imperdiet. Cras
+                                vestibulum, ex id scelerisque blandit, elit massa hendrerit augue,
+                                rutrum lobortis urna metus id urna.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Tab 2 -->
+                    <div class="tab">
+                        <div class="tab-heading">
+                            <h2>Tab 2 Title</h2>
+                        </div>
+                        <div class="tab-content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac
+                                ullamcorper lectus. Donec aliquet tristique imperdiet. Cras
+                                vestibulum, ex id scelerisque blandit, elit massa hendrerit augue,
+                                rutrum lobortis urna metus id urna. Praesent feugiat lacus venenatis
+                                semper interdum. Quisque sed quam placerat, tristique quam et,
+                                molestie mauris. Fusce nec nisl consectetur, mollis dolor eget,
+                                ornare ipsum. Proin venenatis facilisis ullamcorper. Duis aliquet
+                                est elit, non volutpat nibh imperdiet quis. Nunc justo dolor,
+                                pulvinar sed neque molestie.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Tab -->
+                    <div class="tab">
+                        <div class="tab-heading" id="2">
+                            <h2>Tab 3 Title</h2>
+                        </div>
+                        <div class="tab-content">
+                            <p>
+                                Vivamus eu turpis vel magna fermentum dignissim.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            
+        </main>
+
+        <!-- Use the footer to add webpage footer content -->
+        <footer>
+            <p>&copy; Copyright 2024. All Rights Reserved.</p>
+            <p><a href="mailto:kyboo321@gmail.com">kyboo321@gmail.com</a></p>
+        </footer>
+        
+        </div>
+    
+    <script src="libs/highlight/highlight.js"></script>
+    <script src="scripts/script.js"></script>
+    <script>
+        // Displays the navbar on the page
+        includeHTML();
+
+        // Displays the code based on the code box and the text file uploaded
+        const codeWindow1 = document.getElementById('code-box-1');
+        const codeWindow2 = document.getElementById('code-box-2');
+
+        displayCode('files/test.txt', codeWindow1.id);
+        displayCode('files/test.txt', codeWindow2.id);
+
+        // Calls the function to run the carousel slideshow
+        carousel();
+    </script>
+
+</body>
+</html>

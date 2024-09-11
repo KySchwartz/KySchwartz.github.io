@@ -20,6 +20,7 @@ body {
 
 img, video {
     max-width: 100%;
+    max-height: 80vh;
     display: block;
 }
 
@@ -429,7 +430,7 @@ font-size: 40px;
 
 .hero {
   height: 500px; /* Adjust height as needed */
-  background-image: url("images/wuc.png");
+  /*background-image: url("/images/wuc.png");*/
   background-size: cover;
   background-position: center;
   display: flex;
@@ -669,6 +670,191 @@ use this class when making a single drop-btn instance rather than a drop-table*/
 	    transform: rotate(90deg);
 		transform: scale(1, .025);
 	}
+}
+
+/* Style rules for article pages */
+.article-section h2 {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.article-section {
+    padding: 20px;
+}
+
+.article-section .p {
+    line-height: 1.5;
+}
+
+.article-section .image-container {
+    text-align: center;
+    border: 1px solid lightgray;
+}
+
+.article-section img {
+    max-width: 100%;
+    height:50vh;
+    margin: 0 auto;
+}
+
+.article-section .caption {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+/*Style rules for code boxes*/
+.code-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.code-box button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.code-box button::after {
+
+    content: "Copy Code"; /* Text to display on hover */
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden; /* Initially hide the text */
+  }
+  
+.code-box button:hover::after {
+    visibility: visible; /* Show the text on hover */
+  }
+
+.code-output {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+
+/*Style rules for carousel image box*/
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid gray;
+    background-color: beige;
+  }
+  
+  .carousel-slides {
+    display: flex; /* Display slides in a row */
+    transition: transform 0.5s ease; /* Smooth slide transition */
+  }
+  
+  .carousel-slide {
+    flex: 0 0 100%; /* Each slide takes full width */
+    padding: 0 10px; /* Add spacing between slides */
+  }
+  
+  .carousel-slide img {
+    width: auto; /* Make sure images fill the slide */
+    height: auto;
+  }
+  
+  .carousel-slide .caption {
+    max-width: 100%;
+    text-wrap: wrap;
+    text-align: center;
+    font-size: 0.75em;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border-top: 1px solid gray;
+  }
+
+  .carousel-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+/* Style the indicator dots */
+.carousel-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .indicator-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc; /* Default color */
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .indicator-dot.active {
+    background-color: #f00; /* Active slide color */
+  }
+  
+  /* Style navigation buttons (you can customize these further) */
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 30px;
+    background-color: rgba(148, 241, 255, 0.488);
+  }
+
+  .next-btn {
+    right: 0%;
+  }
+
+
+
+
+/* Accordion */
+.accordion {
+	max-width: 100%;
+}
+.tab-heading {
+	background: lightgray;
+	padding: 10px;
+	border-radius: 3px;
+	font-size: 0.6em;
+	color: black;
+    border: 1px solid gray;
+	cursor: pointer;
+}
+.tab-heading h2 {
+	pointer-events: none;
+}
+.tab-content {
+	background: #f3f3f3;
+	overflow-y: hidden;
+	height: 0;
+	transition: 0.5s ease;
+}
+.tab-content p {
+	margin: 20px;
 }
 
 /*END OF RULES*/

@@ -70,7 +70,8 @@ function dropTable(event) {
 
 
 // Attach the event listener to a common parent element
-document.querySelector('.drop-table').addEventListener('click', dropTable);
+// This is done directly on the html page to avoid errors on other pages
+//document.querySelector('.drop-table').addEventListener('click', dropTable);
 
 
 // Dynamic function using DOM relationships to print content to drop content tables automatically
@@ -167,6 +168,183 @@ function formatDateAsMonthYear(date) {
   // Return the formatted string
   return `${monthNames[monthIndex]}, ${year}`;
 }
+
+// Function to display the code in a code window by reading it from a text file
+// Due to security policies of javaScript this code when only run on a live server
+function displayCode(sourceFile, codeOutputId) {
+  fetch(sourceFile)
+      .then(response => response.text())
+      .then(code => {
+          const codeBox = document.getElementById(codeOutputId);
+          const codeOutput = codeBox.querySelector('pre')
+          const copyButton = codeBox.querySelector('button');
+
+          codeOutput.textContent = code;
+
+          // Apply syntax highlighting using your preferred library
+          // Example using highlight.js:
+          hljs.highlightElement(codeOutput);
+
+          copyButton.addEventListener('click', () => {
+              const codeOutput = document.getElementById(codeOutputId);
+              const range = document.createRange();
+              range.selectNodeContents(codeOutput);
+              const selection = window.getSelection();
+              selection.removeAllRanges();
+              selection.addRange(range);
+              document.execCommand('copy');
+              selection.removeAllRanges();   
+
+  });
+      })
+      .catch(error => {
+          console.error('Error fetching code:', error);
+      });
+}
+
+/*
+EXAMPLE USAGE
+const codeWindow1 = document.getElementById('code-output');
+const codeWindow2 = document.getElementById('code-output-2');
+
+displayCode('files/test.txt', codeWindow1.id);
+displayCode('files/test.txt', codeWindow2.id);
+*/
+
+
+
+// Function to control slideshows
+function carousel() {
+const slidesContainer = document.querySelector('.carousel-slides');
+const slides = slidesContainer.querySelectorAll('.carousel-slide');
+const totalSlides = slides.length;
+const prevButton = document.querySelector('.prev-btn');
+const nextButton = document.querySelector('.next-btn');
+const indicatorContainer = document.querySelector('.carousel-indicator');
+
+let slideIndex = 0;
+
+function showSlide(index) {
+  slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+  updateActiveDot(index);
+}
+
+prevButton.addEventListener('click', () => {
+  slideIndex = (slideIndex - 1 + totalSlides) % totalSlides; // Handle circular navigation
+  showSlide(slideIndex);
+  updateActiveDot(slideIndex);
+});
+
+nextButton.addEventListener('click', () => {
+  slideIndex = (slideIndex + 1) % totalSlides; // Handle circular navigation
+  showSlide(slideIndex);
+  updateActiveDot(slideIndex);
+});
+
+// Create indicator dots
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('indicator-dot');
+  indicatorContainer.appendChild(dot);
+}
+
+// When slide changes, update the active dot
+function updateActiveDot(index) {
+  const dots = document.querySelectorAll('.indicator-dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+// Set the click events for each navigation dot
+const dots = document.querySelectorAll('.indicator-dot');
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    showSlide(i);
+    slideIndex = i;
+    updateActiveDot(i);
+  });
+});
+
+// Initial display
+showSlide(slideIndex);
+}
+
+
+
+// Function to control accordian content tabs
+const tabs = document.querySelectorAll('.tab');
+
+const openTab = tab => {
+	const content = tab.childNodes[3];
+	const contentHeight = content.scrollHeight;
+	content.style.height = contentHeight + 'px';
+};
+
+const closeOthersTabs = (tabs, openTab) => {
+	tabs.forEach(tab => {
+		if (tab !== openTab) {
+			const content = tab.childNodes[3];
+			content.style.height = 0;
+		}
+	});
+};
+
+const closeTab = (tabs, openTab) => {
+	tabs.forEach(tab => {
+		if (tab == openTab) {
+			const content = tab.childNodes[3];
+			content.style.height = 0;
+		}
+	});
+};
+
+tabs.forEach(tab => {
+  tab.clickCount = 0;
+  tab.addEventListener('click', () => {
+    tab.clickCount++; // Increment click count
+    if (tab.clickCount % 2 === 0) {
+      // Even click (second or subsequent clicks)
+      const content = tab.childNodes[3];
+      content.style.height = 0; // Collapse content (simulate close)
+    } else {
+      // Odd click (first click)
+      openTab(tab);
+      closeOthersTabs(tabs, tab);
+    }
+  });
+});
+
+// Server function to display navbar on all pages that do not have one explicitly coded
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain attribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+
+
 
 // Depreceated function used for drop button content pairs using an array index argument
 /*
