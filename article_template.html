@@ -24,7 +24,7 @@
         <main style="background-color: rgb(250, 250, 250)">
 
             <section class="article-section">
-                <h2>Section 1</h2>
+                <h2 class="title">Section 1</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut   
      labore et dolore magna aliqua. Ut enim ad minim veniam,   
      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -47,8 +47,8 @@
                 </div>
             </section>
 
-            <section class="article-section">
-                <h2>Test Video</h2>
+            <section class="article-section gray">
+                <h2 class="title">Test Video</h2>
                 <video controls poster="images/targettaglogo.png">
                     <source src="media/Schwartzee-Video.mp4" type="video/mp4">
                     <track src="media/captions.vtt" kind="captions" srclang="en" label="Captions">
@@ -58,7 +58,7 @@
             </section>
 
             <section class="article-section">
-                <h2>Test Slideshow</h2>
+                <h2 class="title">Test Slideshow</h2>
                 <div class="carousel-container">   
 
                     <div class="carousel-slides">
@@ -93,9 +93,9 @@
                   </div>
             </section>
 
-            <section class="article-section">
-                <h2>Accordian Test</h2>
-            </section>
+            <section class="article-section gray">
+                <h2 class="title">Accordian Test</h2>
+            
                 <div class="accordion">
                     <!-- Tab 1 -->
                     <div class="tab">
@@ -142,15 +142,12 @@
                         </div>
                     </div>
                 </div>
-
+            </section>
             
         </main>
 
-        <!-- Use the footer to add webpage footer content -->
-        <footer>
-            <p>&copy; Copyright 2024. All Rights Reserved.</p>
-            <p><a href="mailto:kyboo321@gmail.com">kyboo321@gmail.com</a></p>
-        </footer>
+        <!--Uses a JavaScript function to display footer on server hosted pages-->
+        <div w3-include-html="footer.html"></div>
         
         </div>
     

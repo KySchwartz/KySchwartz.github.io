@@ -632,18 +632,41 @@ use this class when making a single drop-btn instance rather than a drop-table*/
 } 
 
 .drop-btn img{
-    margin: auto;
-    padding: 2px;
-    height: 50px;
-    flex-shrink: 0; /* Prevent image from shrinking */
+    margin: auto 0; /* Center vertically only */
+}
+
+/* A new class specifically for the skill images */
+.drop-img {
+    flex: 0 0 70px; /* Do not grow, do not shrink, base width of 70px */
+    padding: 10px;
+    height: 70px;
+    object-fit: contain; /* Ensures the image scales nicely */
 }
 
 .drop-btn h1, .drop-btn h2 {
-    margin: auto;
+    flex-grow: 1; /* Allows the text to take up the remaining space */
     padding: 10px;
-    white-space: normal; /* Allow text to wrap */
-    word-break: break-word; /* Break long words if necessary */
+    white-space: normal;
+    word-break: break-word;
+    margin: 0; /* Removes auto margin to prevent centering */
+}
+
+/* Align text to the left ONLY when it follows a skill image */
+.drop-img + h1, .drop-img + h2 {
+    text-align: left;
+}
+
+/* Center text ONLY when it's the first element (i.e., no skill image) */
+.drop-btn h1:first-child, .drop-btn h2:first-child {
     text-align: center;
+}
+
+/* Style for the arrow image to give it a fixed space */
+.drop-btn .arrow, .drop-btn .arrow-spare {
+    flex: 0 0 50px; /* Do not grow, do not shrink, base width of 50px */
+    padding: 10px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .drop-btn-title {

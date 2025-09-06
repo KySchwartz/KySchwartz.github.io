@@ -18,40 +18,8 @@
     
     <div id="container">
     	
-    		<header id="news-header" style="display: block;">
-                <h1><a href="index.html">Computer Scientist</a></h1>
-        </header>
-        
-        <!-- Mobile Nav -->
-        <nav class="mobile-nav">
-             <div id="menu-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="learn.html">Learn</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <a class="menu-icon" onclick="hamburger()">
-                <div>&#9776;</div>
-            </a>
-        </nav>
-
-        <!-- Use the header area for the website name or logo -->
-        <header id="schwartzee-logo">
-                <h1><a href="index.html"><img src="images/logo.png" alt="logo"></a></h1>
-        </header>
-
-        <!-- Tablet, Desktop Nav -->
-        <nav class="tablet-desktop">
-            <ul>
-                <a href="index.html"><li><img src="images/logo.png" class="brand-logo" alt=""></li></a>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="learn.html">Learn</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    	<!--Uses a JavaScript function to display navbar on server hosted pages-->
+    	<div w3-include-html="nav.html"></div>
 
         <!-- Use the main area to add the main content of the webpage -->
         <main style="background-color: beige">
@@ -67,7 +35,8 @@
 							  at Southeast Missouri State University.  I have skills in several programming languages that can be viewed in the skills section below.  I am a avid learner always ready 
 							  for the next challenge.  I have worked in several leadership positions in both my high school and college careers and I am comfortable hosting meetings through meeting applications such as Zoom and Teams.  
 							  I prefer remote work.  My entire professional life has been conducted mainly online.  I have been an online learner from kindergarten through college so working remote is something that comes naturally to me.  
-							  If you would like to meet with me or talk to me in person feel free to send me an email.  I am always happy to speak with felow students our potentional employers.
+							  If you would like to meet with me or talk to me in person feel free to send me an email.  I am always happy to speak with felow students our potentional employers.  I was recently featured in an article promoting online learning at Southeast Missouri State University. 
+						<br>The article can be found at this link <a href="https://semo.edu/blog/blog-posts/kyle-schwartz-student-profile.html">https://semo.edu/blog/blog-posts/kyle-schwartz-student-profile.html</a>.
                         </p>
        
                     </div>
@@ -180,18 +149,20 @@
             			  	<span class="fa fa-star checked"></span>
                 			<span class="fa fa-star checked"></span>
                 			<span class="fa fa-star checked"></span>
-                			<span class="fa fa-star"></span>
+                			<span class="fa fa-star checked"></span>
                			 	<span class="fa fa-star"></span>
             				</span>
             			</div>
             			
             			<div>
             				<h3>Projects: </h3>
+							<p>Several machine learning and data mining projects (please see the tiles below for more details)</p>
             			</div>
             			
             			<div class="description">
             				<h3>Description:  </h3>
-            				<p>I have an intermediate understanding of the standard Python code.  I am currently learning its libraries with an emphasis on coding with Python when working on machine learning and AI applications.  </p>
+            				<p>(7/12/2024) - I have an intermediate understanding of the standard Python code.  I am currently learning its libraries with an emphasis on coding with Python when working on machine learning and AI applications.  <br>
+							(1/13/2025) - I have a good understanding of Python including its libraries.  I now use it often for scripting simple applications that help me to get work done, as well as for scraping data from the internet and analyzing the data I collect.  I also have a good understanding of several machine learning libraries such as TensorFlow.  </p>
             			</div>
             			
           		</div>
@@ -264,8 +235,8 @@
             			  	<span class="fa fa-star checked"></span>
                 			<span class="fa fa-star checked"></span>
                 			<span class="fa fa-star checked"></span>
+                			<span class="fa fa-star checked"></span>
                 			<span class="fa fa-star-half-full checked"></span>
-                			<span class="fa fa-star"></span>
             				</span>
             			</div>
             			
@@ -600,21 +571,232 @@
 				<div>
 					<h3>Skill Rating: </h3>
 					<span class="stars">
-					<span class="fa fa-star checked"></span>
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
-					<span class="fa fa-star"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star-half-full checked"></span>
 					</span>
 				</div>
 				
 				<div>
 					<h3>Projects: </h3>
+					<p>PHP Eccommerce website, Created and maintained several databases</p>
 				</div>
 				
 				<div class="description">
 					<h3>Description:  </h3>
-					<p>I am learning SQL in a database course in the Fall 2024 semester.</p>
+					<p>I learned SQL in a database course in the Fall 2024 semester.  It was actually simpler than I was expecting.  I used it often in this course any time I worked with a database.  I then used it when building an Ecommerce website using PHP and an MySQL database.  I can currently employ advanced SQL techniques to retrieve data from a database and I am constantly practicing to improve my skills.</p>
+				</div>
+				
+			</div>
+	<!-- End of skills table element -->
+
+		<!-- Start of skills table element -->
+		<div class="drop-btn" onclick = "dateCalculator('2024-10-25', this)">
+			<img class="drop-img" src="images/php.png" alt="Tile Image">
+			<h1>PHP</h1>
+			<img class="arrow" src="images/arrow.png" alt="Tile Image">
+		</div>
+	
+		<div class="drop-content">
+			<div>
+				<h3>Date Started: </h3>
+				<p class="start-date"></p>
+			</div>
+			
+			<div>
+				<h3>Experience: </h3>
+								<p class="experience"></p>  
+				</div>
+			
+			<div>
+				<h3>Skill Rating: </h3>
+				<span class="stars">
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star-half-full checked"></span>
+					<span class="fa fa-star"></span>
+					<span class="fa fa-star"></span>
+				</span>
+			</div>
+			
+			<div>
+				<h3>Projects: </h3>
+				<p>PHP Eccommerce website connected to MySQL database</p>
+			</div>
+			
+			<div class="description">
+				<h3>Description:  </h3>
+				<p>I learned PHP as part of an extra credit assignment for a database course.  It was amazing to see how both the backend and the frontend of the website works together to generate dynamic content and store information retrieved from the website.  I am able to program most things I need to with PHP, but I am still practicing this language whenever I create new wesbites.</p>
+			</div>
+			
+		</div>
+<!-- End of skills table element -->
+
+			<!-- Start of skills table element -->
+			<div class="drop-btn" onclick = "dateCalculator('2024-8-29', this)">
+				<img class="drop-img" src="images/AWS_Logo.png" alt="Tile Image">
+				<h1>Amazon Web Services</h1>
+				<img class="arrow" src="images/arrow.png" alt="Tile Image">
+			</div>
+		
+			<div class="drop-content">
+				<div>
+					<h3>Date Started: </h3>
+					<p class="start-date"></p>
+				</div>
+				
+				<div>
+					<h3>Experience: </h3>
+									<p class="experience"></p>  
+					</div>
+				
+				<div>
+					<h3>Skill Rating: </h3>
+					<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star-half-full checked"></span>
+					</span>
+				</div>
+				
+				<div>
+					<h3>Projects: </h3>
+					<p>Python Django, database and website are stored, served, and ran entirely on an AWS EC2 Instance.</p>
+				</div>
+				
+				<div class="description">
+					<h3>Description:  </h3>
+					<p>Amazon Web Services is a extremely large infastructure and much more complicated than I was expecting.  It takes a long time to navigate and learn about each feature.  I am most skilled with EC2 Instances, but I have practiced with other tools as well.  Due to the vast nature of this platform, please contact me about any specifics regarding AWS.</p>
+				</div>
+				
+			</div>
+	<!-- End of skills table element -->
+
+	<!-- Start of skills table element -->
+			<div class="drop-btn" onclick = "dateCalculator('2025-2-1', this)">
+				<img class="drop-img" src="images/powerbi.png" alt="Tile Image">
+				<h1>Microsoft Power BI</h1>
+				<img class="arrow" src="images/arrow.png" alt="Tile Image">
+			</div>
+		
+			<div class="drop-content">
+				<div>
+					<h3>Date Started: </h3>
+					<p class="start-date"></p>
+				</div>
+				
+				<div>
+					<h3>Experience: </h3>
+									<p class="experience"></p>  
+					</div>
+				
+				<div>
+					<h3>Skill Rating: </h3>
+					<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star-half-full checked"></span>
+					</span>
+				</div>
+				
+				<div>
+					<h3>Projects: </h3>
+					<p>Miscellaneous Power BI reports and dashboards, Final project using Power BI to analyze and visualize data from a dataset.</p>
+				</div>
+				
+				<div class="description">
+					<h3>Description:  </h3>
+					<p>I am comfortable using Microsoft Power BI to create interactive reports and dashboards including those that require advanced features.</p>
+				</div>
+				
+			</div>
+	<!-- End of skills table element -->
+
+		<!-- Start of skills table element -->
+			<div class="drop-btn" onclick = "dateCalculator('2025-2-1', this)">
+				<img class="drop-img" src="images/firebase.png" alt="Tile Image">
+				<h1>Google Firebase</h1>
+				<img class="arrow" src="images/arrow.png" alt="Tile Image">
+			</div>
+		
+			<div class="drop-content">
+				<div>
+					<h3>Date Started: </h3>
+					<p class="start-date"></p>
+				</div>
+				
+				<div>
+					<h3>Experience: </h3>
+									<p class="experience"></p>  
+					</div>
+				
+				<div>
+					<h3>Skill Rating: </h3>
+					<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+					</span>
+				</div>
+				
+				<div>
+					<h3>Projects: </h3>
+					<p>Cloud-based mobile Android ecommerce website using Google Firebase</p>
+				</div>
+				
+				<div class="description">
+					<h3>Description:  </h3>
+					<p>My experience with Google Firebase is limited to its use in Android Studio, but I understand its libraries and functions meaning I could integrate it into other applications if needed.</p>
+				</div>
+				
+			</div>
+	<!-- End of skills table element -->
+
+		<!-- Start of skills table element -->
+			<div class="drop-btn" onclick = "dateCalculator('2025-2-1', this)">
+				<img class="drop-img" src="images/android.png" alt="Tile Image">
+				<h1>Android Mobile Application Development</h1>
+				<img class="arrow" src="images/arrow.png" alt="Tile Image">
+			</div>
+		
+			<div class="drop-content">
+				<div>
+					<h3>Date Started: </h3>
+					<p class="start-date"></p>
+				</div>
+				
+				<div>
+					<h3>Experience: </h3>
+									<p class="experience"></p>  
+					</div>
+				
+				<div>
+					<h3>Skill Rating: </h3>
+					<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star-half-full checked"></span>
+						<span class="fa fa-star"></span>
+					</span>
+				</div>
+				
+				<div>
+					<h3>Projects: </h3>
+					<p>Various small mobile applications, Cloud-based ecommerce website using Google Firebase and a Android Studio developed UI.</p>
+				</div>
+				
+				<div class="description">
+					<h3>Description:  </h3>
+					<p>I am comfortable using Android Studio to develop mobile applications.  I can also handle complex backend services required for exchanging data between the application and a cloud-based server.</p>
 				</div>
 				
 			</div>
@@ -642,8 +824,8 @@
 						<h3>Skill Rating: </h3>
 						<span class="stars">
 						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star"></span>
-						<span class="fa fa-star"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star-half-full checked"></span>
 						<span class="fa fa-star"></span>
 						<span class="fa fa-star"></span>
 						</span>
@@ -651,15 +833,196 @@
 					
 					<div>
 						<h3>Projects: </h3>
+						<p>Implemented Python Django Eccomerce Website and Deployed it to an AWS Instance with another student, ran machine learning models on an AWS instance, Deployed and analyzed data on the AWS server, while simultaneously deploying this data to a webpage.</p>
 					</div>
 					
 					<div class="description">
 						<h3>Description:  </h3>
-						<p>I am learning Cloud Computing in a cloud computing course in the Fall 2024 semester.</p>
+						<p>I learned Cloud Computing in a cloud computing course in the Fall 2024 semester.  Due to the large number of options and techniques in this field, I can't say I am a professional at it, 
+							but I am able to run machine learning models and deploy applications and websites onto cloud servers.  I can also debug and implement projects on Amazon Web Service Instances.  This is a rather vague skill title 
+							considering all that cloud computing is.  If you have any questions about my specific skills regarding this field please contact my as I am constantly learning more.
+						</p>
 					</div>
 					
 				</div>
 		<!-- End of skills table element -->
+
+		<!-- Start of skills table element -->
+				<div class="drop-btn" onclick = "dateCalculator('2025-2-1', this)">
+					<img class="drop-img" src="images/wireshark-logo.png" alt="Tile Image">
+					<h1>Wireshark</h1>
+					<img class="arrow" src="images/arrow.png" alt="Tile Image">
+				</div>
+			
+				<div class="drop-content">
+					<div>
+						<h3>Date Started: </h3>
+						<p class="start-date"></p>
+					</div>
+					
+					<div>
+						<h3>Experience: </h3>
+										<p class="experience"></p>  
+						</div>
+					
+					<div>
+						<h3>Skill Rating: </h3>
+						<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star-half-full checked"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+						</span>
+					</div>
+					
+					<div>
+						<h3>Projects: </h3>
+						<p> Used Wireshark to monitor network traffic for various small projects including the larger DDoS attack project in the projects section.</p>
+					</div>
+					
+					<div class="description">
+						<h3>Description:  </h3>
+						<p>
+							• Used wireshark to monitor network traffic by filtering packets to obtain desired information.
+							• Can understand data derived from Wireshark to determine suspicious activity on small networks.
+							• Have not used Wireshark in any large scale networks outside of private home networks set up for learning and experimenting.
+						</p>
+					</div>
+					
+				</div>
+		<!-- End of skills table element -->
+
+		<!-- Start of skills table element -->
+				<div class="drop-btn" onclick = "dateCalculator('2025-2-1', this)">
+					<img class="drop-img" src="images/blank.png" alt="Tile Image">
+					<h1>Virtual Machines</h1>
+					<img class="arrow" src="images/arrow.png" alt="Tile Image">
+				</div>
+			
+				<div class="drop-content">
+					<div>
+						<h3>Date Started: </h3>
+						<p class="start-date"></p>
+					</div>
+					
+					<div>
+						<h3>Experience: </h3>
+										<p class="experience"></p>  
+						</div>
+					
+					<div>
+						<h3>Skill Rating: </h3>
+						<span class="stars">
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star-half-full checked"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+						</span>
+					</div>
+					
+					<div>
+						<h3>Projects: </h3>
+						<p>
+							• Set up Python Django website on Amazon EC2 Instance using an Ubuntu VM to connect to the Amazon instance.
+							• Used a Kali Linux VM to experiment with cybersecurity tools and techniques so the main computer system would be isolated and protected.
+						</p>
+					</div>
+					
+					<div class="description">
+						<h3>Description:  </h3>
+						<p>
+							• Used Linux VMs such as Kali Linux 
+						</p>
+					</div>
+					
+				</div>
+		<!-- End of skills table element -->
+
+					<!-- Start of skills table element -->
+					<div class="drop-btn" onclick = "dateCalculator('2024-8-29', this)">
+						<img class="drop-img" src="images/blank.png" alt="Tile Image">
+						<h1>Machine Learning</h1>
+						<img class="arrow" src="images/arrow.png" alt="Tile Image">
+					</div>
+				
+					<div class="drop-content">
+						<div>
+							<h3>Date Started: </h3>
+							<p class="start-date"></p>
+						</div>
+						
+						<div>
+							<h3>Experience: </h3>
+											<p class="experience"></p>  
+							</div>
+						
+						<div>
+							<h3>Skill Rating: </h3>
+							<span class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star-half-full checked"></span>
+								<span class="fa fa-star"></span>
+							</span>
+						</div>
+						
+						<div>
+							<h3>Projects: </h3>
+							<p>Binary Prediction of Poisionous Mushrooms based an selective features (team project)</p>
+						</div>
+						
+						<div class="description">
+							<h3>Description:  </h3>
+							<p>My experience in machine learning is largely rooted in my coursework and studying various online resources.  I am familiar with various techniques, and I am comfortable using libraries such as TensorFlow.  I am always looking to improve my skills and stay up-to-date with the latest developments in the field.</p>
+						</div>
+						
+					</div>
+			<!-- End of skills table element -->
+
+						<!-- Start of skills table element -->
+						<div class="drop-btn" onclick = "dateCalculator('2024-8-29', this)">
+							<img class="drop-img" src="images/blank.png" alt="Tile Image">
+							<h1>Data Mining</h1>
+							<img class="arrow" src="images/arrow.png" alt="Tile Image">
+						</div>
+					
+						<div class="drop-content">
+							<div>
+								<h3>Date Started: </h3>
+								<p class="start-date"></p>
+							</div>
+							
+							<div>
+								<h3>Experience: </h3>
+												<p class="experience"></p>  
+								</div>
+							
+							<div>
+								<h3>Skill Rating: </h3>
+								<span class="stars">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star-half-full checked"></span>
+									<span class="fa fa-star"></span>
+								</span>
+							</div>
+							
+							<div>
+								<h3>Projects: </h3>
+								<p>Binary Prediction of Poisionous Mushrooms based an selective features (team project), Data Analysis and visualization of large datasets</p>
+							</div>
+							
+							<div class="description">
+								<h3>Description:  </h3>
+								<p>My experience with data mining primarily comes from my coursework and personal projects. I have applied data mining techniques such as clustering, classification, and regression analysis to extract insights from large datasets. I have used Python libraries alongside Jupyter Notebook's to visualize and analyze data effectively.  I also use data mining techniques to prepare data to be used in machine learning models.</p>
+							</div>
+							
+						</div>
+				<!-- End of skills table element -->
          	
 					<div class="drop-btn-title">
 								
@@ -758,7 +1121,20 @@
                 <h1 class="title-div">Experience</h1>
                 <div class="exp-tiles">
 
-                
+            	<div class="exp-tile">
+                    <img src="images/semo.png" alt="Tile Image">
+                    <div class="tile-info">
+                        <h3>President of the Online Student Advisory Council (OSAC)</h3>
+                    	<h4>Southeast Missouri State University</h4>
+                    	<h4>9/12/2023 - 1/7/2025</h4>
+                    	<h4>Online</h4>
+                        <p>
+                            This group works to improve the online learning experience for students at SEMO.  Under the guidance of a SEMO online advisor, I help to plan meeting agenda, arrange the groups digital precense, and manage anything delegated to me during meetings by the chapter advisor.  
+							I volunteered for the office of president after the group was created by a SEMO online advisor in 2023.
+                        </p>
+                  
+                    </div>
+                </div>
 
                 <div class="exp-tile">
                     <img src="images/nhs.png" alt="Tile Image">
@@ -777,20 +1153,7 @@
                     </div>
                 </div>
                 	
-                	<div class="exp-tile">
-                    <img src="images/semo.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h3>President of the Online Student Advisory Council (OSAC)</h3>
-                    	<h4>Southeast Missouri State University</h4>
-                    	<h4>9/12/2023 - Present</h4>
-                    	<h4>Online</h4>
-                        <p>
-                            This group works to improve the online learning experience for students at SEMO.  Under the guidance of a SEMO online advisor, I help to plan meeting agenda, arrange the groups digital precense, and manage anything delegated to me during meetings by the chapter advisor.  
-							I volunteered for the office of president after the group was created by a SEMO online advisor in 2023.
-                        </p>
-                  
-                    </div>
-                </div>
+
                 	
                </div>
             </section>
@@ -802,13 +1165,27 @@
                 <h1 class="title-div">Awards</h1>
             	
             	<div class="exp-tiles">
+					<div class="exp-tile">
+                    <img src="images/PKP_CIRCLE.png" alt="Tile Image">
+                	
+                    <div class="tile-info">
+                        <h3>Phi Kappa Phi</h3>
+                    	<h4>Southeast Missouri State University</h4>
+                    	<h4>Inducted into the honor society of Phi Kappa Phi in the Spring of 2025.</h4>
+                    	
+                     
+                    	<!--<button>See Certificate</button>-->
+                  
+                    </div>
+                </div>
+
                  <div class="exp-tile">
                     <img src="images/semo.png" alt="Tile Image">
                 	
                     <div class="tile-info">
                         <h3>SEMO President's List</h3>
                     	<h4>Southeast Missouri State University</h4>
-                    	<h4>Fall 2022 - Fall 2024</h4>
+                    	<h4>Fall 2022 - Spring 2025</h4>
                     	
                      
                     	<!--<button>See Certificate</button>-->
@@ -822,7 +1199,7 @@
                     <div class="tile-info">
                         <h3>SEMO Dean's List</h3>
                     	<h4>Southeast Missouri State University</h4>
-                    	<h4>Fall 2022 - Fall 2024</h4>
+                    	<h4>Fall 2022 - Spring 2025</h4>
                     	
                      
                     	<!--<button>See Certificate</button>-->
@@ -840,15 +1217,16 @@
             
         </main>
 
-        <!-- Use the footer to add webpage footer content -->
-        <footer>
-            <p>&copy; Copyright 2024. All Rights Reserved.</p>
-            <p><a href="mailto:kyboo321@gmail.com">kyboo321@gmail.com</a></p>
-        </footer>
+        <!--Uses a JavaScript function to display footer on server hosted pages-->
+        <div w3-include-html="footer.html"></div>
         
     </div>
     
     <script src="scripts/script.js"></script>
+    <script>
+        // Displays the navbar on the page
+        includeHTML();
+    </script>
 	<script>
 		// Attach the event listener to a common parent element
 		document.querySelector('.drop-table').addEventListener('click', dropTable);
