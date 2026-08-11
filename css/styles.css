@@ -1083,11 +1083,16 @@ span.toggle-desc-text:hover {
 
 .projects-section {
     background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .explore-section {
-    background-color: #f8fafc;
+    background-color: #ffffff;
     border-top: 1px solid #e2e8f0;
+}
+
+#index-contact {
+    background-color: #f8fafc
 }
 
 /* Skill Tags Formatting */
