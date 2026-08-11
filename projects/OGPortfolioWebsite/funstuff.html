@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- This webpage was created by: Kyle Schwartz -->
+<html lang="en">
+<head>
+	<title>Kyle Schwartz</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico.bmp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+<body>
+    
+    <div id="container">
+    	
+    	<!--Uses a JavaScript function to display navbar on server hosted pages-->
+    	<div w3-include-html="nav.html"></div>
+
+        <!-- Use the main area to add the main content of the webpage -->
+        <main style="background-color: rgb(250, 250, 250)">
+            
+            <p>This page is currently being developed and may not function correctly, but feel free to look around anyway.</p>
+
+            <h1 class="title-div">Fun Stuff</h1>
+        	    <p>This page contains the projects that just didnt make the cut.  They were either made by tutorial, incomplete, a working draft or just too simple to reflect my best work.  this page is simply for fun and to learn from so feel free to look around but dont expect everthing to work perfectly.</p>
+            
+            <div class="tiles">
+
+                <!--<div class="tile">
+                    <img src="images/wuc.png" alt="Tile Image">
+                    <div class="tile-info">
+                        <h2>Title</h2>
+                        <p>Description goes here.</p>
+                        <a href="project.html">
+                            <button class="tile-btn">Read More</button>
+                        </a>
+                    </div>
+                </div>-->
+
+                <div class="tile">
+                    <img src="images/wuc.png" alt="Tile Image">
+                    <div class="tile-info">
+                        <h2>Coming Soon</h2>
+                    	    <h3>Please Check Back Later</h3>
+                        <p>
+                            This page currently has no content, but I am planning on adding some of my experimental projects at a later time.
+                        </p>
+                        <a href="TargetTagWebApp/index.html">
+                            <button class="tile-btn" disabled>Coming Soon</button>
+                        </a>
+                    </div>
+                </div>
+                
+                
+            </div>
+        	
+        	<div class="title-div">
+        	<h2>Want to see more projects?</h2>
+        		<p>Click below to see my portfolio projects</p>
+        	<button class="about-btn" onclick=window.location.href="projects.html">Portfolio Projects</button>
+        	</div>
+            
+        </main>
+
+        <!--Uses a JavaScript function to display footer on server hosted pages-->
+        <div w3-include-html="footer.html"></div>
+        
+        </div>
+    
+    <script src="scripts/script.js"></script>
+    <script>
+        // Displays the navbar on the page
+        includeHTML();
+    </script>
+
+</body>
+</html>

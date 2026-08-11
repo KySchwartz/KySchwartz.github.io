@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- This webpage was created by: Kyle Schwartz -->
+<html lang="en">
+<head>
+	<title>Contact Us - Location | Schwartzee Bees</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Schwartzee Bees is a small beekeeping bussiness that is happy to assist you.  Contact us for any help you may need.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico.bmp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+<body>
+    
+    <div id="container">
+        
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">
+             <div id="menu-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="shop.html">Shop</a>
+                <a href="learning.html">Learning Center</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <a class="menu-icon" onclick="hamburger()">
+                <div>&#9776;</div>
+            </a>
+        </nav>
+
+        <!-- Use the header area for the website name or logo -->
+        <header id="schwartzee-logo">
+            <a href="index.html"><img src="images/Schwartzee-Bees-logo.png" alt="Schwartzee Bees logo"></a>
+        </header>
+
+        <!-- Tablet, Desktop Nav -->
+        <nav class="tablet-desktop">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="learning.html">Learning Center</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Use the main area to add the main content of the webpage -->
+        <main>
+
+            <div id="contact">
+                
+                <h2>Need to contact us?</h2>
+                <h4 class="mobile tel-link"><a href="tel:5734839758">Call us: 573-483-9758 or 573-535-1501</a></h4>
+                <h4 class="tablet-desktop tel-num">(573) 483-9758 or (573) 535-1501</h4>
+                <h4>Email us: <a href="mailto:schwartzeebees@bee.net" class="contact-email-link">schwartzeebee@bee.net</a></h4>
+                <h3 class="offer" onclick="discount()" id="special">View Promo Code</h3>
+                <h4>Visit us at: Address to be determined</h4>
+                
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100561.32538077232!2d-90.46376298514276!3d38.03446908729606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8f6bdfa2115eb%3A0x80cd117a38c04f!2s6196%20Charter%20Church%20Rd%2C%20Festus%2C%20MO%2063028!5e0!3m2!1sen!2sus!4v1663335349813!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+            </div>
+            
+            <div id="form">
+                
+                <h2>Complete the form to recive more information about Schwartzee Bees</h2>
+                
+                <form class="form-grid"><!-- Start Form -->
+                    
+                    <fieldset>
+                        <legend>Customer Information</legend>
+                        <label for="fName">First Name:</label>
+                        <input type="text" id="fName" name="fname" required>
+                        
+                        <label for="lname">Last Name:</label>
+                        <input type="text" name="lName" id="lName" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                        
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Additional Information</legend>
+                        <p>I would like information about:</p>
+                        
+                        <label for="grpfit"><input type="checkbox" name="interest" id="grpfit" value="Products">Products</label>
+                        
+                        <label for="prtrain"><input type="checkbox" name="interest" id="prtrain" value="Orders">Orders</label>
+                        
+                        <label for="nutr"><input type="checkbox" name="interest" id="nutr" value="General Questions">General Questions</label>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Referral Source</legend>
+                        <label for="reference">How did you find us?</label>
+                        <select name="reference" id="reference">
+                            <option value="ad">Advertisement</option>
+                            <option value="friend">Friend</option>
+                            <option value="google">Google</option>
+                            <option value="social">Social Media</option>
+                            <option value="other">Other</option>
+                        </select>
+                        
+                        <label for="questions">Questions?</label>
+                        <textarea id="questions" name="questions" rows="5" cols="35"></textarea>
+                    </fieldset>
+                    
+                    <input type="submit" id="submit" value="Submit" class="btn">
+                    
+                </form>
+                
+            </div>
+
+        </main>
+
+        <!-- Use the footer to add webpage footer content -->
+        <footer>
+            
+            <div class="copyright">
+                <p>&copy; Copyright 2022. All Rights Reserved.</p>
+                <p><a href="mailto:schwartzeebees@bee.net">schwartzeebees@bee.net</a></p>
+            </div>
+            
+            <div class="social">
+                <a href=https://facebook.com target="blank"><img src="images/facebook-logo.png" alt="Facebook log"></a>
+                
+                <a href=https://twitter.com target="blank"><img src="images/twitter-logo.png" alt="Twitter logo"></a>
+            </div>
+            
+        </footer>
+        
+    </div>
+    
+    <script src="scripts/script.js"></script>
+
+</body>
+</html>

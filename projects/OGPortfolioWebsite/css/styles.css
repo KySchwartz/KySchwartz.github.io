@@ -1,0 +1,1411 @@
+
+/*
+Author: Kyle Schwartz
+Date: 9/16/2022
+File Name: styles.css
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, div, img, ul, figure, figcaption, section, article, aside, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style rules for body and images */
+body {
+    background-color: #ccc;
+    background: linear-gradient(to right, rgb(255, 173, 173), rgb(255, 255, 169), rgb(148, 255, 148), rgb(175, 175, 255));
+}
+
+img, video {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+}
+
+/* Style rule for box sizing applies to all elements */
+*{
+    box-sizing: border-box;
+}
+
+/* Begin style rules for mobile viewport */
+
+/*Style rule for header */
+header {
+    top: 0;
+    background-color: #00eaff;
+    height: 80px;
+}
+
+header img {
+    margin: 0 auto;
+    height: 80px;
+    position: absolute;
+    left:10%;
+}
+
+#news-header {
+    width: 100%;
+    background-color: #FFFF6E;
+    height: 20px;
+}
+
+#news-header h1{
+    font-size: 1em;
+    text-align: center;
+}
+
+#news-header a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Style rules for hamburger menu */
+.mobile-nav a {
+    color: red;
+    font-family: 'Francois One', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 3%;
+    display: block;
+    background-color: #00eaff;
+    border-bottom: 1px solid green;
+}
+
+.mobile-nav a.menu-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+/*
+.menu-icon {
+    border: 2px solid red;
+}
+*/
+
+/* Show mobile class, hide tablet-desktop class and menu-links id */
+.mobile {
+    display: block;
+}
+
+.tablet-desktop, #menu-links {
+    display: none;
+}
+
+/* Style rules for main content */
+main {
+    background-color: #fff;
+    padding: 2%;
+    font-size: 1.15em;
+    font-family: 'Roboto Slab', serif;
+}
+
+video {
+    margin: 0 auto 4%;
+}
+
+.mobile h3 {
+    text-shadow: 5px 5px 8px #ccc;
+}
+
+article {
+    padding: 2%;
+}
+
+article h3 {
+    text-align: center;
+}
+
+article img {
+    margin: 0 auto;
+}
+
+article ul {
+    margin-left: 10%;
+}
+
+article:nth-of-type(2) {
+    background-color: rgba(204, 204, 204, 0.3);
+}
+
+#beekeepers, #equipment, #educated {
+    margin: 0 2%;
+}
+
+.round {
+    border-radius: 8px;
+}
+
+.tel-link {
+    background-color: #ffea00;
+    padding: 2%;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tel-link a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: block;
+}
+
+.hours {
+    margin-left: 10%
+}
+
+.action {
+    font-size: 1.15em;
+    color: #ffbf00;
+    font-weight: bold;
+    text-shadow: 5px 5px 8px #ccc;
+}
+
+.frame {
+    position: relative;
+    max-width: 450px;
+    margin: 2% auto;
+}
+
+.pic-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0.5);
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-bottom: 4px;
+    /* Add any other styling you'd like */
+}
+
+.tile img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.tile-info {
+    width: 100%;
+}
+
+.tile-info h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.tile-info h3 {
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+}
+
+.tile-info p {
+    font-size: 1rem;
+    color: #777;
+    text-align: left;
+}
+
+.tile-info a {
+    text-decoration: none;
+}
+
+.tile-info button {
+    display: block;
+    margin:auto;
+    background-color: rgb(0, 200, 255);
+    color: rgb(255, 0, 0);
+    font-size: 24px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: none; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+.tile-info button:disabled {
+  background-color: #cccccc;
+  color: #999999;
+  opacity: 0.7;
+}
+
+/* Container for tile buttons */
+.tile-btn-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 10px; /* Space between buttons */
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* Ensure buttons inside the container take appropriate width */
+.tile-btn-container .tile-btn {
+    width: 100%;
+    /*max-width: 280px;*/ /* Adjust as needed */
+    background-color: rgb(0, 200, 255);
+    color: rgb(255, 0, 0);
+    font-size: 24px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: none; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+
+
+.exp-tiles {
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.exp-tile {
+    position: relative;
+        flex-direction: row; /* Stack horizontally on small screens */
+        align-items: flex-start;
+        opacity: 0.9;
+    display: flex;
+    flex-direction: row;
+    align-items: left; /* Center content horizontally */
+    padding: 20px;
+    margin-bottom: 10px;
+    /*border: 1px solid #ddd;*/
+    /*border-radius: 8px;*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+    /* Add any other styling you'd like */
+    border-left: 4px dotted blue;
+    border-bottom: 4px dotted blue;
+}
+
+
+.exp-tile img {
+    max-width: 25%;
+    height: auto;
+    border-radius: 4px;
+    order: -1;
+}
+
+.exp-tile .tile-info {
+    width: 100%;
+}
+
+.exp-tile .tile-info h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: ;
+}
+
+.exp-tile .tile-info p {
+    font-size: 1rem;
+    color: #777;
+    text-align: left;
+}
+
+
+.exp-tile:before {
+  content: "";
+  border: 1px solid #d3d3d3;
+  align-self: stretch;
+}
+
+
+.exp-tile .tile-info button {
+    display: block;
+    margin:auto;
+    background-color: white;
+    color: rgb(255, 0, 0);
+    font-size: 1em; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: 2px solid black; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+.exp-tile .tile-info button:disabled {
+    background-color: #cccccc;
+    color: #999999;
+    opacity: 0.7;
+  }
+
+
+#contact .contact-email-link {
+    color: #ffbf00;
+    text-decoration: none;
+}
+
+.map {
+    border: 2px solid #000;
+    width: 95%;
+    height: 50%;
+}
+ 
+#form {
+    margin-top: 2%;
+    background-color: #f2f2f2;
+    padding: 2%;
+}
+    
+#form h2 {
+    text-align: center;
+}
+    
+/* Style rules for form elements */
+fieldset, input, select, textarea {
+    margin-bottom: 2%;
+}
+
+fieldset legend {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+label {
+    display: block;
+    padding-top: 3%;
+}
+
+form #submit {
+    margin: 0 auto;
+    border: none;
+    display: block;
+    padding: 2%;
+    background-color: #b3b3b3;
+    font-size: 1em;
+    border-radius: 10px;
+}
+
+/* Style rules for footer content */
+footer p {
+    font-size: 0.75em;
+    text-align: center;
+    color: #000000;
+    padding: 0 1em;
+}
+
+footer p a {
+    color: #000000;
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.social {
+    /*float: left;*/
+    width: 10%;
+    padding-top: 1%;
+    margin-right: 80%;
+    order: -1;
+}
+
+.social img {
+    display: inline-block;
+    padding: 0%;
+}
+
+/* STYLE RULED MADE ON MOBILE */
+#about-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background-color: white;
+    /* Add any other styling you'd like */
+}
+
+
+.about-btn {
+    display: block;
+    margin:auto;
+    background-color: yellow;
+    color: red;
+    font-size: 24px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: none; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+
+.about-flex-element {
+/*background-color: #f4f4f4;*/
+width: 100%;
+height:50px;
+margin: 10px;
+text-align: center;
+font-size: 40px;
+}
+
+
+
+.hero {
+  height: 500px; /* Adjust height as needed */
+  /*background-image: url("/images/wuc.png");*/
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    position: relative;
+  color: white; /* For text color */
+    
+}
+
+.hero-image {
+    height:500px;
+    width:100%;
+   /*filter: blur(5px);*/
+    object-fit: cover
+            
+}
+
+.hero-content {
+   text-align: center;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+    width:80%;
+    animation: wipe-enter 1s ease-in-out;
+}
+
+.hero-content p {
+    font-weight: bold;
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 15px 25px 15px 25px;
+}
+
+.hero-content h1 {
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 15px;
+}
+
+.hero-content h2 {
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 50px;
+}
+
+.hero-content h3 {
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 50px;
+}
+
+.hero-content button {
+    color: white;
+    background-color: rgb(255 0 0 / 85%);
+        font-size: 18px; /* Adjust the font size as needed */
+    padding: 10px 20px; /* Add some padding for spacing */
+    border: none; /* Remove the default button border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    text-decoration: none;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title-div {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+}
+
+.drop-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.drop-content {
+     width: 100%;
+  padding: 2px 0;
+  text-align: center;
+  background-color: whitesmoke;
+    transition: height 0.5s ease-in-out;
+  margin-top: 2px;
+    display: none;
+    animation-name: slide-animation;
+        
+        animation-delay: 3s;
+        
+        animation-duration: 5s;
+}
+
+.drop-content div {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid blue;
+    height: 100%;
+}
+
+.drop-content p {
+    padding: 5px;
+    margin: auto;
+}
+
+.description p {
+    text-align: left;
+}
+
+.stars{
+    padding: 5px;
+    margin: auto;
+}
+
+.arrow {
+ /* border: solid black;
+  border-width: 0 3px 3px 0;*/
+  display: inline-block;
+  padding: 3px;
+}
+
+/*This is a second arrow class used to prevent the class name selector on the javascript method from selecting the wrong element
+use this class when making a single drop-btn instance rather than a drop-table*/
+.arrow-spare {
+ /* border: solid black;
+  border-width: 0 3px 3px 0;*/
+  display: inline-block;
+  padding: 3px;
+}
+
+.checked {
+  color: orange;
+}
+
+.drop-btn {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 3px solid green;
+    min-height: 80px; /* Use min-height to allow expansion */
+    height: auto; /* Allow height to adjust to content */
+    align-items: center; /* Vertically center content */
+} 
+
+.drop-btn img{
+    margin: auto;
+    padding: 2px;
+    height: 50px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.drop-btn h1, .drop-btn h2 {
+    margin: auto;
+    padding: 10px;
+    white-space: normal; /* Allow text to wrap */
+    word-break: break-word; /* Break long words if necessary */
+    text-align: center;
+}
+
+.drop-btn-title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 3px solid green;
+    height: 80px;
+    background-color: lightblue;
+} 
+
+
+.drop-btn-title h1{
+    margin: auto;
+  padding: 10px;
+}
+
+#about-tiles {
+    display:none;
+}
+
+
+
+ @keyframes myAnimation {
+    /*from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }*/
+      0% { opacity: 0;}
+     25% {opacity: 0.25;}
+        50% { opacity: 0.5;}
+     75% {opacity: 0.75;}
+        100% { opacity: 1;/*height: 40px*/}
+}
+
+.animated {
+    animation: wipe-enter 1s ease-in-out;
+}
+
+/*animation courtesy of coolcssanimations.com */
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+
+@keyframes vertical-wipe-enter {
+	0% {
+		transform: scale(.025, 0);
+	}
+	50% {
+		transform: scale(.025, 1);
+	}
+}
+
+@keyframes spin-enter {
+	0% {
+	    transform: rotate(180deg);
+		transform: scale(0, .025);
+	}
+	50% {
+	    transform: rotate(90deg);
+		transform: scale(1, .025);
+	}
+}
+
+/* Style rules for article pages */
+.article-section .title {
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.article-section {
+    padding: 5px;
+    /*border: 1 solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;*/
+    background-color: white;
+}
+
+.gray {
+    background-color: rgb(234, 234, 234);
+}
+
+.article-section .p {
+    line-height: 1.5;
+}
+
+.article-section .image-container {
+    text-align: center;
+    border: 1px solid lightgray;
+}
+
+.article-section img {
+    max-width: 100%;
+    height:50vh;
+    margin: 0 auto;
+}
+
+.article-section .caption {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 0.75em;
+}
+
+/*Style rules for code boxes*/
+.code-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.code-box button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.code-box button::after {
+
+    content: "Copy Code"; /* Text to display on hover */
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden; /* Initially hide the text */
+  }
+  
+.code-box button:hover::after {
+    visibility: visible; /* Show the text on hover */
+  }
+
+.code-output {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+
+/*Style rules for carousel image box*/
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid gray;
+    background-color: beige;
+  }
+  
+  .carousel-slides {
+    display: flex; /* Display slides in a row */
+    transition: transform 0.5s ease; /* Smooth slide transition */
+  }
+  
+  .carousel-slide {
+    flex: 0 0 100%; /* Each slide takes full width */
+    padding: 0 10px; /* Add spacing between slides */
+  }
+  
+  .carousel-slide img {
+    width: auto; /* Make sure images fill the slide */
+    height: auto;
+  }
+  
+  .carousel-slide .caption {
+    max-width: 100%;
+    text-wrap: wrap;
+    text-align: center;
+    font-size: 0.75em;
+    background-color: rgb(235, 235, 235);
+    color: black;
+    border-top: 1px solid gray;
+  }
+
+  .carousel-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+/* Style the indicator dots */
+.carousel-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .indicator-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc; /* Default color */
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .indicator-dot.active {
+    background-color: #f00; /* Active slide color */
+  }
+  
+  /* Style navigation buttons (you can customize these further) */
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 30px;
+    background-color: rgba(148, 241, 255, 0.488);
+  }
+
+  .next-btn {
+    right: 0%;
+  }
+
+
+
+
+/* Accordion */
+.accordion {
+	max-width: 100%;
+}
+
+.tab-heading {
+	background: lightgray;
+	padding: 10px;
+	border-radius: 3px;
+	font-size: 0.6em;
+	color: black;
+    border: 1px solid gray;
+	cursor: pointer;
+}
+.tab-heading h2 {
+	pointer-events: none;
+}
+.tab-content {
+	background: #f3f3f3;
+	overflow-y: hidden;
+	height: 0;
+	transition: 0.5s ease;
+}
+.tab-content p {
+	margin: 20px;
+}
+
+
+/*END OF RULES*/
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 630px), print {
+    
+    /* Tablet Viewport: Show tablet-desktop class, hide mobile class */
+    .tablet-desktop {
+        display: block;
+        }
+
+    .mobile, .mobile-nav {
+        display: none;
+        }
+
+    /* Tablet Viewport: Style rule for header */
+    header {
+        display: none;
+        /*padding-bottom: 2%;*/
+        }
+
+    /* Tablet Viewport: Style rules for nav area */
+    nav {
+        padding: 1%;
+        margin-bottom: 0%;
+        background-color: #00eaff;
+        border-bottom: 8px solid #6BCB77;
+        position: relative;
+        float: center;
+        width: 100%;
+        height: auto;
+        /*margin: 4em 1em 0 0;*/
+        clear: both;
+        
+    }
+
+    .brand-logo{
+        position:absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        display:inline;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+        
+    }
+
+    nav ul {
+        text-align: right;
+    }
+
+    nav u1 {
+        list-style-type: none;
+        text-align: center;
+    }
+    
+    nav li {
+        font-size: 1.2em;
+        font-family: Verdana, Arial, sans-serif;
+        display: inline-block;
+        border-right: 1px solid green;
+    }
+
+    nav li:last-child {
+        border-right: none;
+    }
+
+    nav li a {
+        padding: 0.1em 0.75em;
+        display: block;
+        color: red;
+        text-decoration: none;
+        /*background-color: rgb(164, 234, 255);*/
+    }
+    
+    
+#news-header {
+    /*display: block;*/
+    width: 100%;
+    
+    height: 20px;
+}
+
+    /* Tablet Viewport: Style rules for main content */
+    main ul {
+            margin: 0 0 4% 10%;
+        }
+    
+    .grid{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+    
+    .pic-text {
+        font-size: 1em;
+        padding: 10px;
+    }
+    
+    aside {
+        text-align: center;
+        font-size: 1.25em;
+        font-style: italic;
+        font-weight: bold;
+        padding: 2%;
+        background-color: rgba(204, 204, 204, 0.5);
+        box-shadow: 5px 5px 8px #000;
+        text-shadow: 5px 5px 5px #b3b3b3;
+        border-radius: 0 15px;
+    }
+    
+    .grid-item4 {
+        grid-column: 1 / span 3;
+    }
+
+    #starting {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        background: linear-gradient(to right, #ccc, #fff);
+        background-color: #f2f2f2;
+        padding: 1% 2%;
+        }
+
+    #starting dt {
+        font-weight: bold;
+        }
+
+    #starting dd {
+        padding: 0.5% 1% 2% 0;
+        }
+    
+    .viewex {
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    #example {
+        display: none;
+    }
+
+    .tel-num {
+        font-size: 1.25em;
+        }
+
+    .map {
+        width: 600px;
+        height: 450px;
+        }
+  
+    .external-link {
+        color:darkorange;
+        font-weight: bold;
+        text-decoration: none;
+        }
+
+    #contact {
+        text-align: center;
+        }
+
+    #contact a {
+        color: #666600;
+        text-decoration: none;
+        }
+    
+     .tile {
+        position: relative;
+        flex-direction: row; /* Stack horizontally on small screens */
+        align-items: flex-start;
+        opacity: 0.9;
+    }
+
+    .tile img {
+        padding: 40px;
+        max-width: 50%;
+    }
+    
+    .tile-info {
+        width: 100%;
+    }
+    
+      .tile-info-left {
+        width: 100%;
+          order:-1;
+    }
+    
+    .tile-info h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        vertical-align: top;
+    }
+    
+    .tile-info p {
+        font-size: 1rem;
+        color: #777;
+        padding-bottom: 40px;
+    }
+
+    
+    .tile-info button {
+        position: absolute;
+        bottom:10px;
+        right:10px;
+    }
+    
+
+    /* Position the button container on desktop */
+    .tile-btn-container {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        flex-direction: row; /* Align buttons horizontally */
+        width: auto;
+    }
+
+    /* Make desktop buttons size to their content */
+    .tile-btn-container .tile-btn {
+        width: auto;
+    }
+    
+    .left {
+    order: -1;
+}
+    
+    /* Tablet Viewport: Style rules for table */
+    table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 1%;
+    }
+    
+    th, td {
+        border: 1px solid #000;
+        padding: 2%;
+    }
+    
+    th {
+        background-color: #000;
+        color: #fff;
+        font-size: 1.15em;
+    }
+    
+    tr:nth-child(odd) {
+        background-color: #ccc;
+    }
+    
+    /* Tablet Viewport: Style rule for form elements */
+    form {
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+    /* Tablet Viewport: Animation */
+    @-webkit-keyframes text-animation {
+        0% {font-size: 1em; }
+        50% {font-size: 1.75em; }
+        100% {font-size: 1.35em; }
+    }
+        
+    @keyframe text-animation {
+        0% { font-size: 1em; }
+        50% { font-size: 1.75em; }
+        100% { font-size: 1.35em; }
+    }
+    
+    figcaption {
+        -webkit-animation-name: text-animation;
+        animation-name: text-animation;
+        -webkit-animation-delay: 3s;
+        animation-delay: 3s;
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
+    }
+    
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 830px), print {
+ 
+    /* Desktop Viewport: Style rule for header */
+    header {
+        display: none;
+        /*width: auto;
+        float: left;
+        padding-bottom: 0;
+        position:absolute;
+        left:0;*/
+        
+    }
+    
+    /* Desktop Viewport: Style rules for nav area */
+    nav {
+        position: relative;
+        float: center;
+        width: 100%;
+        /*margin: 4em 1em 0 0;*/
+        clear: both;
+    }
+
+    .brand-logo{
+        width: 100px;
+        height: 100px;
+        
+    }
+    
+    nav ul {
+        text-align: right;
+    }
+    
+    nav li {
+        border-right: 1px solid #fff;
+    }
+        
+    nav li a {
+        padding: 0.5em 1em;
+        font-size: 1.5rem;
+        }
+    
+    nav li a:hover {
+        color: #00eaff;
+        background-color: red;
+        /*transform: scale(1.2);*/
+    }
+    
+    /* Desktop Viewport: Style Rules for main content */
+    main {
+        clear: left;
+    }
+    
+    main h1 {
+        font-size: 1.8em;
+    }
+    
+    article h3 {
+        font-size: 1.75em;
+    }
+
+    .hero-content p {
+        font-size: 1.50em;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.75em;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.75em;
+    }
+
+    .title-div {
+        font-size: 1.75em;
+    }
+
+    .tile img {
+        max-height: 400px;
+    }
+
+    .exp-tile img {
+        max-height: 300px;
+    }
+    
+    .pic-text {
+        font-size: 1.5em;
+        padding: 20px;
+    }
+    
+    .frame {
+        opacity: 0.9;
+    }
+    
+    .frame:hover {
+        opacity: 1;
+        box-shadow: 8px 8px 10px #808080;
+        transform: translateY(10px);
+    }
+    
+    .tile {
+        position: relative;
+        flex-direction: row; /* Stack horizontally on small screens */
+        align-items: flex-start;
+        opacity: 0.9;
+    }
+    .tile img {
+        max-width: 50%;
+    }
+    
+    .tile-info {
+        width: 100%;
+    }
+    
+    .tile-info h2 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        vertical-align: top;
+    }
+
+    .tile-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .tile-info p {
+        font-size: 1.2rem;
+        color: #777;
+    }
+
+    .tile-info button {
+        position: absolute;
+        bottom:10px;
+        right:10px;
+    }
+    
+    /*
+    .tile:hover {
+        opacity: 1;
+        box-shadow: 8px 8px 10px #808080;
+        transform: translateY(10px);
+    }
+    */
+
+    .tile-info button:hover {
+        background-color: rgb(19, 0, 139); /* Change the background color on hover */
+        color: white; /* Change the text color on hover */
+    }
+    
+
+
+    #beekeepers, #equipment, #educated {
+        width: 29%;
+        float: left;
+        margin: 0 2%;
+    }
+    
+    #starting {
+        clear: left;
+    }
+    
+    .offer:hover {
+        transform: scale(1.25);
+        cursor: pointer;
+    }
+    
+    /* Desktop Viewport: Style rules for form elements */
+    form {
+        width: auto;
+    }
+    
+    .form-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+    
+    .btn {
+        grid-column: 1 / span 3;
+    }
+    
+    /*STYLE RULES MADE ON MOBILE*/
+    #about-nav {
+        position: relative;
+        flex-direction: row; /* Stack horizontally on small screens */
+        align-items: center;
+        justify-content: center;
+        opacity: 0.9;
+    }
+    /*END OF RULES*/
+    
+}
+
+/* Media Query for Large Desktop Viewports */
+@media screen and (min-width: 1921px) {
+ 
+    #container {
+        width: 1920px;
+        margin: 0 auto;
+    }
+    
+    table {
+        width: 80%;
+    }
+    
+}
+
+/* Media Query for Print */
+@media print {
+ 
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+    
+}

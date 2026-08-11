@@ -1,0 +1,337 @@
+[
+  {
+    "title": "ModelHubAI Agent Hosting and Repository Platform",
+    "date": "January - May 2026",
+    "image": "images/ModelHubAILogo.png",
+    "description": "<span>My college capstone project, ModelHubAI, is an AI agent hosting and repository platform that allows users to simply upload their code, select their desired interface options, and the platform handles dependency installation and user interface configuration with no additional code needed on the developer's part. ModelHubAI bridges the gap between AI developers and end users.</span><br><br><span>Behind the scenes, the untrusted user code is run in a zero-trust secure sandbox container within Docker, which was chosen so that the project could easily be scaled and shared remotely with team members helping to develop the project. The code itself is run using FastAPI due to its superior speed and adaptability with machine learning code. Data is stored within a PostgreSQL database, also due to the large array of features and proven reliability for projects requiring a scalable relational database. Django was used for its pre-built account management and administrative features that could easily be tailored to the needs of the project.</span><span><br><br><span><b>Quick Overview of Accomplishments:</b></span></span><br><span>•</span> Designed and built a containerized full-stack platform featuring a Django backend and a PostgreSQL relational database,\nutilizing the Docker Python SDK to dynamically orchestrate isolated FastAPI sandbox environments for secure\nexecution of AI agents. <br><span>•</span> Engineered an automated provisioning system within an isolated container to dynamically parse configuration\nschemas, download and configure model dependencies, and ensure secure and consistent runtime execution. <br><span>•</span> Translated Figma wireframes into a dynamic UI generation engine that automatically renders functional web\ninterfaces based on model metadata schemas and API endpoints. <br><span>•</span> Optimized AI agent deployment workflows to reduce agent setup time by up to 90% through a combination of\nautomatic dependency installation and UI generation",
+    "category": "featured",
+    "technologies": [
+      "Python",
+      "Docker",
+      "Django",
+      "FastAPI",
+      "PostgreSQL"
+    ],
+    "buttons": [
+      {
+        "text": "Report",
+        "url": "\\projects\\ModelHubAI\\The Capstone Crew - Final Project Report.pdf"
+      },
+      {
+        "text": "Project Pitch",
+        "url": "\\projects\\ModelHubAI\\ModelHubAI_Hackathon_Pitch.pdf"
+      },
+      {
+        "text": "Demo Video",
+        "url": "https://youtu.be/Ek2AcFekscY"
+      },
+      {
+        "text": "GitHub",
+        "url": "https://github.com/KySchwartz/ai-model-repository"
+      }
+    ]
+  },
+  {
+    "title": "SaltStack GUI",
+    "date": "August - December 2025",
+    "image": "images/SaltGUI.png",
+    "description": "SaltGUI was developed in collaboration with <a href=\"https://www.linkedin.com/in/samuelbrucker296/\">Samuel Brucker</a> and the rest of the SEMO CyberDefense team to assist in the rapid deployment of security scripts to multiple devices. The application is a user interface built for Salt that allows the user to add devices, select from a list of available devices, and select from a list of available scripts. Multiple scripts and multiple devices can be selected at once. A diagnostics and command line window lets the user view data from connected devices and determine if a command was successful. All of this can be done without entering a single command since the GUI essentially translates Salt commands into an intuitive dashboard. <br><br>The biggest requirement and hurdle of the project was that it needed to install fast and use as few libraries or outside tools as possible, as these both increased installation times and introduced additional points for failure. The dashboard also needed to be accessible in a web browser. To meet this challenge, t<span>he dashboard was built using vanilla HTML, CSS, and JavaScript, and was programmed so that when a selection was made, the backend would essentially write a Salt command for the user.</span><span> An HTTP request containing the Salt command would then be sent to a Node.js proxy server containing custom API scripts used to format the requests before sending them to the Salt API on the Salt Master server. The Salt Master would then send the script or command to the connected devices and return the result to the dashboard.</span><br><br>The original design proved effective enough that it helped the team to secure a high rank in several competitions. It is still updated regularly by the team, and it is used often during competitions. <b><i>Because of this, all code is located in the 'Developmental' branch on GitHub</i>.<br><b><br></b>Quick Overview of Accomplishments:</b><br>• <span>Collaborated with the SEMO CyberDefense team to design a centralized GUI for SaltStack, enabling automated security script deployment across a distributed network of remote nodes.</span><br>• <span>Developed a Node.js/Express backend to manage and monitor real-time script execution on remote devices via RESTful APIs.</span><br>• <span>Streamlined asynchronous remote execution workflows by abstracting complex SaltStack CLI commands into a browser-based dashboard, reducing deployment latency and improving response times for securing critical network infrastructure.</span>",
+    "category": "featured",
+    "technologies": [
+      "SaltStack",
+      "Node.js",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "buttons": [
+      {
+        "text": "Demo",
+        "url": "https://youtu.be/QfJL2RzPevs"
+      },
+      {
+        "text": "GitHub",
+        "url": "https://github.com/KySchwartz/Salt-GUI"
+      }
+    ]
+  },
+  {
+    "title": "Binary Classification of Poisonous Mushrooms",
+    "date": "November - December 2024",
+    "image": "images/mushroom.jpg",
+    "description": "<span>• Engineered a high-performance classification pipeline for a 3.1M+ row dataset, executing extensive data cleansing and feature engineering to prepare 22 variables for predictive modeling.</span><br><span>• Developed and optimized multiple machine learning models, including XGBoost, Logistic Regression, and Random Forest, to automate the identification of hazardous samples based on data features.</span><br><span>• Conducted rigorous statistical evaluation of model performance using Python (Matplotlib/Seaborn) and Jupyter Notebooks, generating visual diagnostics to interpret complex decision boundaries and feature importance.</span><br><span>• Achieved 99% predictive accuracy by benchmarking models against Precision, Recall, and F1-Scores, ultimately selecting the Random Forest architecture as the optimal solution for high-stakes classification.</span>",
+    "category": "featured",
+    "technologies": [
+      "Python",
+      "NumPy",
+      "Matplotlib",
+      "Pandas",
+      "TensorFlow",
+      "XGBoost",
+      "Random Forest"
+    ],
+    "buttons": [
+      {
+        "text": "Report",
+        "url": "media/2024-12-03 - Final Project Report.pdf"
+      },
+      {
+        "text": "Presentation Slides",
+        "url": "media/CS505_Final_PowerPoint.pdf"
+      },
+      {
+        "text": "View Code",
+        "url": "https://github.com/KySchwartz/Binary-Classification-of-Poisonous-Mushrooms"
+      }
+    ]
+  },
+  {
+    "title": "Splash Dash",
+    "date": "February 2024 - May 2024",
+    "image": "images/splashdashlogo.png",
+    "description": "Splash Dash is a 2D side-scrolling runner game built from scratch using Unity and C#. The project focused on building an accessible and user-friendly application for a young audience that maintained high-performance standards across desktop, mobile, and web platforms.  The game currently features 9 playable characters with over 10 distinct voice lines for each and 2 level locations. This application raises awareness of pollution with colorful cartoon characters, dynamic character voices, and engaging gameplay.<br><br>• Gameplay Engineering - Architected fluid 2D player physics and input handling for mobile and PC players, fine-tuning movement and collision detection to ensure precise, responsive controls.<br>• Performance Optimization - Designed and implemented a custom Random Object Pooling system for dynamic obstacle generation and timed removal, significantly reducing runtime garbage collection and preventing frame drops by limiting the number of collision detection objects in the scene at a given time.<br>• State Management - Engineered a custom state management system using C# and Unity's built-in tools to track real-time game data and player data such as character and level selection and high score across scenes.<br>• Hand-Drawn Aesthetic - Used Unity's built-in animation tools to animate the individual hand-drawn sprite frames.<br>• Sound Integration - Scripted voice lines and worked with five voice actors to record over 90 unique voice lines using Audacity to edit the clips before adding them to random pools that play the lines based on in-game events.<br>• Modular Codebase - Leveraged object-oriented programming (OOP) principles, including inheritance and encapsulation, to write reusable scripts for modular obstacle variations, character reskins, alternating voicelines, and player progression.  Adding characters and voicelines required little to no modifications to the C# code.",
+    "category": "featured",
+    "technologies": [
+      "Unity",
+      "C#"
+    ],
+    "buttons": [
+      {
+        "text": "Play Game",
+        "url": "projects/SplashDashWebGLBuild/index.html"
+      },
+      {
+        "text": "View Code",
+        "url": "https://github.com/KySchwartz/Splash-Dash"
+      }
+    ]
+  },
+  {
+    "title": "Android Ecommerce Application Using Google Firebase",
+    "date": "February - May 2025",
+    "image": "images/CTRL+STYLE_Project_Image.png",
+    "description": "• Led a team of 7 to design and develop an Android e-commerce application as part of semester long project for CS533 Mobile Application Development at Southeast Missouri State University.<br>• Developed a fully functional e-commerce application in Android Studio using Google Firebase as the backend.<br>• Implemented user authentication, custom icon and splash screens, product listings, product details, a shopping cart, a checkout page, an orders page, a user list, and a user analytics page.<br>• Retrieved and modified all data for each app instance from a centralized Firebase database.",
+    "category": "major",
+    "technologies": [
+      "Android Studio",
+      "Firebase",
+      "Java",
+      "XML"
+    ],
+    "buttons": [
+      {
+        "text": "Presentation",
+        "url": "https://youtu.be/8tzcmoxgkvM"
+      },
+      {
+        "text": "Screenshots",
+        "url": "media/CTRL+STYLE_Screenshots.pdf"
+      },
+      {
+        "text": "View Code",
+        "url": "https://github.com/KySchwartz/TheAppvengers_CS533_ECommerceAndroidApp"
+      }
+    ]
+  },
+  {
+    "title": "Data Analysis and Visualization Using Microsoft PowerBI",
+    "date": "October - December 2025",
+    "image": "images/powerbi-project.png",
+    "description": "• Analyzed a dataset ranking retirement quality for each state in the United States and divided the data into 5 distinct categories for analysis.<br>• Utilized PowerBI and Microsoft Excel to sort, filter, perform calculations, and visualize the dataset into comprehensive and interactive PowerBI dashboards.<br>• Utilized PowerBI dashboards and Excel calculations to gather additional insights about the data, eventually presenting this data to stakeholders as a comprehensive presentation and written report meant for individuals unfamiliar with technology or the dataset.",
+    "category": "major",
+    "technologies": [
+      "PowerBI",
+      "Microsoft Excel"
+    ],
+    "buttons": [
+      {
+        "text": "Presentation",
+        "url": "https://youtu.be/NrGNt1MaqXY"
+      },
+      {
+        "text": "Report",
+        "url": "media/Kyle Schwartz_IS575_PowerBI Project Report.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Python Django Website Hosted on Amazon EC2 Instance",
+    "date": "November - December 2024",
+    "image": "images/amazon-ec2-screenshot.png",
+    "description": "• Worked on a team of 5 to develop a Python Django website hosted on an Amazon EC2 instance.<br>• Designed web pages using wireframes and implemented a responsive web design using HTML, CSS, and JavaScript.<br>• Helped to structure the backend data structures using Django's built-in features.<br>• Implemented user authentication and account management for placing orders.<br>• Collaborated with team members to integrate front-end and back-end components.<br>• Deployed the website on an Amazon EC2 instance, ensuring proper configuration and security settings.<br>• The website could then be accessed at a public IP address, with user authentication restricting access to specified resources.<br>• Due to the free trial ending, the website is no longer accessible on an Amazon EC2 instance, but the archived files from that EC2 instance can be found by clicking the \"Archived Amazon EC2 Files\" button below.",
+    "category": "major",
+    "technologies": [
+      "Amazon EC2",
+      "Python Django",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "buttons": [
+      {
+        "text": "Presentation Slides",
+        "url": "media/CS506_eCommerce_Final_Complete_Presentation.pdf"
+      },
+      {
+        "text": "View Developmental Code",
+        "url": "https://github.com/brdane/CS506"
+      },
+      {
+        "text": "Archived Amazon EC2 Files",
+        "url": "https://github.com/KySchwartz/CS506-Final-Project"
+      }
+    ]
+  },
+  {
+    "title": "SQL Database and Eccomerce Website Design",
+    "date": "October - December 2024",
+    "image": "images/cs440-final-img.png",
+    "description": "• Lead a team of four to develop a MySQL database with 10 tables using SQL on a local host server.<br>• Designed and implemented a frontend website using HTML, CSS, and JavaScript, with PHP alongside SQL sequences and triggers on the backend to allow users to view and modify database records from a browser.<br>• Drafted formal documentation including an E-R Diagram, Relational Schema, Data Type chart, and CRUD Matrix.",
+    "category": "major",
+    "technologies": [
+      "MySQL",
+      "PHP",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "buttons": [
+      {
+        "text": "Document",
+        "url": "media/SQL Squad_CS404_Final Project Document.pdf"
+      },
+      {
+        "text": "View Code",
+        "url": "https://github.com/KySchwartz/SQL-Squad_CS440_Final-Project"
+      }
+    ]
+  },
+  {
+    "title": "Small Business Website Design Project Using WIX",
+    "date": "November - December 2024",
+    "image": "images/Schwartzee_Bee_Project_Image.png",
+    "description": "• Used WIX to develop a working e-commorce website for the course IS440 at Southeast Missouri State University<br>• Followed the web development lifecycle and employed advanced design techniques to create a website that focuses on improving user experience, while marketing a brand.<br><br> This website was developed for potential future use by my family's small beekeeping business, Schwartzee Bees.",
+    "category": "major",
+    "technologies": [
+      "Wix",
+      "Figma",
+      "Web Design"
+    ],
+    "buttons": [
+      {
+        "text": "View Project",
+        "url": "https://kyboo321.wixsite.com/schwartzeebees"
+      }
+    ]
+  },
+  {
+    "title": "Target Tag",
+    "date": "November 2023 - December 2023",
+    "image": "images/targettaglogo.png",
+    "description": "This was my first ever made from scratch, large, programming project. It was made as a collaboration with two other students, but it went far beyong the requirments of the course project. Target Tag is a JavaFX based game incorporating many features including a computer controlled opponent and randomly moving obstacles. The game features several modes for difficulty adjustments and co-op modes. The goal of the game was to collect 20 randomly spawning targets before your opponents. Unfortunantly JavaFX cannot easily be ran in a browser, so this game is only playable through an IDE. I will hopefully be able to include a downloadable release for the game someday.",
+    "category": "other",
+    "technologies": [
+      "Java",
+      "JavaFX"
+    ],
+    "buttons": [
+      {
+        "text": "View Code",
+        "url": "https://github.com/KySchwartz/Target-Tag"
+      }
+    ]
+  },
+  {
+    "title": "Formal Usability Testing of Splash Dash",
+    "date": "May 2024",
+    "image": "images/splashdashlogo.png",
+    "description": "After completing my Splash Dash game, I conducted formal usability testing to make improvements. This included creating a test plan, recruiting participants, and conducting the tests. The testing was conducted with 5 participants who were asked to complete a series of tasks while thinking aloud. The results of the tests were then analyzed and used to improve the game.",
+    "category": "other",
+    "technologies": [
+      "Usability Testing",
+      "UX Design"
+    ],
+    "buttons": [
+      {
+        "text": "Document",
+        "url": "media/Kyle Schwartz_IS420_Final HCI Project.pdf"
+      }
+    ]
+  },
+  {
+    "title": "Connect 4",
+    "date": "September 2024",
+    "image": "images/connect4logo.png",
+    "description": "A simple Connect4 game using HTML, CSS, and JavaScript. This website was built using personal skills and the integration of AI prompts with Microsoft Copilot and Google's Gemini to speed the development process. This was one of my earliest attempts at integrating AI tools into my developmental workflow. I would like to thank Ania Kubow for the basic functional starter template for this game.",
+    "category": "other",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "buttons": [
+      {
+        "text": "View Project",
+        "url": "projects/Connect4/index.html"
+      },
+      {
+        "text": "View Starter Code",
+        "url": "https://github.com/kubowania/connect-four/tree/master"
+      }
+    ]
+  },
+  {
+    "title": "Tic Tac Toe",
+    "date": "September 2023",
+    "image": "images/tictactoelogo.png",
+    "description": "A simple Tic Tac Toe game using HTML, CSS, and JavaScript. This one was a very basic and early example of my work when I started working on side projects using web development tools.",
+    "category": "other",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "buttons": [
+      {
+        "text": "View Project",
+        "url": "projects/TicTacToe/TicTacToe.html"
+      }
+    ]
+  },
+  {
+    "title": "Original Portfolio Website",
+    "date": "August 2024 - August 2026",
+    "image": "images/og-website.png",
+    "description": "This is my original portfolio website for anyone who may want to see or revisit the old version. This website is hosted for legacy purposes only and to showcase how my designs have progressed. <b>It is no longer updated and does not contain up-to-date information.</b>",
+    "category": "other",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "buttons": [
+      {
+        "text": "View Website",
+        "url": "projects/OGPortfolioWebsite/index.html"
+      }
+    ]
+  },
+  {
+    "title": "Small Business Website",
+    "date": "September 2022 - November 2022",
+    "image": "images/schwartzeebeeswebsitelogo.png",
+    "description": "This was a demo website I attempted to make for my family's beekeeping business as part of my first Information Systems course. This was my first ever experience with HTML, CSS, and JavaScript. This project is included to showcase how my skills have progressed.",
+    "category": "other",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "buttons": [
+      {
+        "text": "View Project",
+        "url": "projects/SchwartzeeBeeWebpage6/index.html"
+      }
+    ]
+  }
+]

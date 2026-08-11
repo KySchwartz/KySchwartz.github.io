@@ -2,8 +2,8 @@
 <!-- This webpage was created by: Kyle Schwartz -->
 <html lang="en">
 <head>
-	<title>Kyle Schwartz</title>
-	<meta charset="utf-8">
+    <title>Kyle Schwartz</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -15,71 +15,175 @@
 <body>
     
     <div id="container">
-    	
-    <!--Uses a JavaScript function to display navbar on server hosted pages-->
-    <div w3-include-html="nav.html"></div>
         
-       
-    	
-<!-- Hero Image -->  	
-<div class="hero">
-  <img class="hero-image" src="images/projects.jpg" alt="Hero Image">
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>Hello!</h1>
-    	  <h2>Thanks for stopping by</h2>
-      <p>I'm Kyle Schwartz, a Computer Information Systems student with education and experience in programming, research, design, and leadership.  Having completed my entire school career 100% online, I know how to make remote work, work.</p>
-    	  <h2>Want to learn more?</h2>
-      <button onclick=window.location.href="about.html">Click Here</button>
+        <!-- Uses a JavaScript function to display navbar on server hosted pages -->
+        <div w3-include-html="nav.html"></div>
+            
+        <section class="pro-hero">
+    <div class="pro-hero-inner">
+
+        <!--
+        <div class="pro-photo-wrapper">
+            <div class="pro-photo-glow"></div>
+            <img src="images/projects.jpg" alt="Kyle Schwartz">
+        </div>
+        -->
+
+        <div class="pro-hero-text">
+            <h1>Hello, I'm Kyle Schwartz.</h1>
+            <p>
+                I'm a Computer Information Systems graduate skilled in software development, database management, and data analysis. I am an avid learner eager to work on practical solutions while adapting to any technical environment.
+            </p>
+            <button onclick="window.location.href='about.html'">Learn More</button>
+        </div>
+
     </div>
- 		</div>
-</div>
+</section>
 
-    	
-    	    
 
-        <!-- Use the main area to add the main content of the webpage -->
-        <main style = "background-color: beige">
-            
-            
-        	<div class="title-div" style="background-color: white;">
-        		<h3>Ready to Explore?</h3>
-        		<h4>Check out some of these other pages!</h4>
-        	</div>
+        <!-- Main Content with Distinct Sections -->
+        <main>
 
-            
-            <div class="grid">
-                
-                <figure class="frame">
-                    <a href="about.html"><img src="images/me.jpg" alt="tba"></a>
-                    <figcaption class="pic-text">About</figcaption>
-                </figure>
-                
-                <figure class="frame">
-                    <a href="projects.html"><img src="images/projects.jpg" alt="tba"></a>
-                    <figcaption class="pic-text">Projects</figcaption>
-                </figure>
-                
-                <figure class="frame">
-                    <a href="contact.html"><img src="images/contact.jpg" alt="tba"></a>
-                    <figcaption class="pic-text">Contact</figcaption>
-                </figure>
-            	
-                
+        <!-- Technical Skills Section -->
+        <section id="skills" class="page-section skills-section">
+            <div class="section-content">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="tech-stack-grid">
+
+                    <!-- Programming & Web -->
+                    <div class="tech-category">
+                        <h3>Programming & Web</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">HTML / CSS</span>
+                            <span class="tech-tag">SQL (PostgreSQL, MySQL)</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks & APIs -->
+                    <div class="tech-category">
+                        <h3>Frameworks & APIs</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">REST APIs</span>
+                            <span class="tech-tag">SaltStack</span>
+                            <span class="tech-tag">Android Studio</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & Data Science -->
+                    <div class="tech-category">
+                        <h3>AI & Data Science</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">LLMs (Unsloth, Llama)</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Random Forest</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & Infrastructure -->
+                    <div class="tech-category">
+                        <h3>Cloud & Infrastructure</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Docker (Python SDK)</span>
+                            <span class="tech-tag">AWS (EC2)</span>
+                            <span class="tech-tag">Google Cloud (Firebase)</span>
+                            <span class="tech-tag">Linux (Kali, Ubuntu)</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="tech-category">
+                        <h3>Tools & Platforms</h3>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Git / GitHub</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">VS Code</span>
+                            <span class="tech-tag">Wireshark</span>
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">Microsoft Office</span>
+                            <span class="tech-tag">Microsoft Access</span>
+                            <span class="tech-tag">JSON / XML</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            
+        </section>
+
+            <!-- Featured Projects Section -->
+            <section id="featured-projects-section" class="page-section projects-section">
+                <div class="section-content">
+                    <h2 class="section-title">Featured Projects</h2>
+
+                    <!-- Renders featured projects dynamically via script.js -->
+                    <div id="featured-projects" class="tiles"></div>
+                    
+                    <!-- Direct call to action to full projects page -->
+                    <div class="view-all-container">
+                        <a href="projects.html" class="view-all-btn">View All Projects &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Explore / Navigation Grid Section -->
+            <section id="explore" class="page-section explore-section">
+                <div class="section-content">
+                    <div class="title-div">
+                        <h3>Ready to Explore?</h3>
+                        <h4>Check out some of these other pages!</h4>
+                    </div>
+
+                    <div class="grid">
+                        <figure class="frame">
+                            <a href="about.html"><img src="images/me.jpg" alt="About Me"></a>
+                            <figcaption class="pic-text">About</figcaption>
+                        </figure>
+                        
+                        <figure class="frame">
+                            <a href="projects.html"><img src="images/projects.jpg" alt="Projects"></a>
+                            <figcaption class="pic-text">Projects</figcaption>
+                        </figure>
+                        
+                        <figure class="frame">
+                            <a href="contact.html"><img src="images/contact.jpg" alt="Contact"></a>
+                            <figcaption class="pic-text">Contact</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
         </main>
 
-        <!--Uses a JavaScript function to display footer on server hosted pages-->
+        <!-- Uses a JavaScript function to display footer on server hosted pages -->
         <div w3-include-html="footer.html"></div>
         
-        </div>
+    </div>
     
     <script src="scripts/script.js"></script>
     <script>
-        // Displays the navbar on the page
+        // Displays the navbar and loads featured projects
         includeHTML();
+        loadProjects('featured-projects', true); // true loads ONLY featured projects
     </script>
+
+<div id="image-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Enlarged View">
+    <div id="modal-caption"></div>
+</div>
 
 </body>
 </html>

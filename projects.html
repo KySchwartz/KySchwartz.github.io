@@ -2,8 +2,8 @@
 <!-- This webpage was created by: Kyle Schwartz -->
 <html lang="en">
 <head>
-	<title>Kyle Schwartz</title>
-	<meta charset="utf-8">
+    <title>Kyle Schwartz</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -15,337 +15,76 @@
 <body>
     
     <div id="container">
-    	
-    	<!--Uses a JavaScript function to display navbar on server hosted pages-->
-    	<div w3-include-html="nav.html"></div>
+        
+        <!--Uses a JavaScript function to display navbar on server hosted pages-->
+        <div w3-include-html="nav.html"></div>
 
-        <!-- Use the main area to add the main content of the webpage -->
-        <main style="background-color: rgb(250, 250, 250)">
-            
-            <div class="title-div">
-                <h1 class="title-div">Projects</h1>
-        	    <!--<p>This page contains some of my projects</p>-->
-            </div>
-            
-            <div class="tiles">
+        <!-- Main content -->
+        <main>
+        <div class="title-div">
+            <h1 class="title-div">Projects</h1>
+        </div>
 
-                <!--<div class="tile">
-                    <img src="images/wuc.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Title</h2>
-                        <p>Description goes here.</p>
-                        <a href="project.html">
-                            <button class="tile-btn">Read More</button>
-                        </a>
-                    </div>
-                </div>-->
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="project-search" 
+                placeholder="Search projects by title, date, skills..." 
+                oninput="handleSearch()"
+            />
+        </div>
 
-          <!--     <div class="tile">
-                    <img src="images/wuc.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Target Tag Web App</h2>
-                    	    <h3>July 2024 - Present</h3>
-                        <p>A remake the JavaFX based Target Tag game.  This version is made using HTML, CSS, and Javascript with an emphasis on using the HTML Canvas.  Although not exact to the original, this version 
-                            can be played on any device thanks to its mobile controls and browser based format.  As for the tractors, they were the only images I had on hand while desinging the game.  This game is still very 
-                            much a work in progress and is here for TEST PURPOSES ONLY.  There are several bugs and UI issues that would need to be fixed before it could be considerd fully playable.
-                        </p>
-                        <a href="TargetTagWebApp/index.html">
-                            <button class="tile-btn">Play Game</button>
-                        </a>
-                    </div>
-                </div>  -->
+        <!-- Section 1: Featured Projects (Also rendered on index.html) -->
+        <section class="project-section" id="featured-section">
+            <h2 class="project-section-title">Featured Projects</h2>
+            <p class="section-subtitle">Recent major capstone-level projects</p>
+            <div id="featured-projects-container" class="tiles"></div>
+        </section>
 
-                <div class="tile">
-                    <img src="images/blank.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Data Analysis and Visualization Using Microsoft PowerBI</h2>
-                        <h3>October - December 2025</h3>
-                        <p>
-                            • Analyzed a dataset ranking each state in the United States using 5 different categories for IS575 at Southeast Missouri State University<br>  
-                            • Utilized PowerBI and Microsoft Excel to perform calculations, sort, filter, and visualize the dataset.<br>
-                            • Discovered new insights about the data based on the information retrieved after creating a PowerBI report.<br>
-                            <!--• <br>-->
-                        </p>   
-                    </div>
-                    <div class="tile-btn-container">
-                        <a href="media/Kyle Schwartz_IS575_PowerBI Project Report.pdf">
-                            <button class="tile-btn">View Report</button>
-                        </a>
-                        <a href="https://youtu.be/NrGNt1MaqXY">
-                            <button class="tile-btn">View Presentation</button>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="tile">
-                    <img src="images/Schwartzee_Bee_Project_Image.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Small Business Website Design Project Using WIX</h2>
-                        <h3>November - December 2024</h3>
-                        <p>
-                            • Used WIX to develop a working e-commorce website for the course IS440 at Southeast Missouri State University<br>  
-                            • Followed the web development lifecycle and employed advanced design techniques to create a website that focuses on improving user experience, while marketing a brand.<br>
-                            <br> This website was developed for potential future use by my family's small beekeeping business, Schwartzee Bees.
-                        </p>   
-                    </div>
-                    <div class="tile-btn-container">
-                        <a href="https://kyboo321.wixsite.com/schwartzeebees">
-                            <button class="tile-btn">View Finished Website</button>
-                        </a>
-                    </div>
-                </div>
+        <!-- Section 2: Major Projects (Not on index.html) -->
+        <section class="project-section" id="major-section">
+            <h2 class="project-section-title">Major Projects</h2>
+            <p class="section-subtitle">Important personal and course projects</p>
+            <div id="major-projects-container" class="tiles"></div>
+        </section>
 
-                <div class="tile">
-                    <img src="images/blank.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>DDoS Attacks Prevention Using Kali Linux VM</h2>
-                        <h3>November 2025</h3>
-                        <p>
-                            • Blocked web traffic to and from specific IP addresses using iptables.<br>  
-                            • Monitored web traffic using Wireshark.<br>
-                            • Performed a simulated DDoS attack on a Kali Linux VM.<br>
-                            • Analyzed network packets for suspicious activity.<br>
-                            <br> Sorry for any inconvienince, but the files for this project will be uploaded at a later date.
-                        </p>  
-                        <a href="">
-                            <button class="tile-btn" disabled>File Not Available</button>
-                        </a> 
-                    </div>
-                    <div class="tile-btn-container">
-                        
-                    </div>
-                </div>
+        <!-- Section 3: Other Projects -->
+        <section class="project-section" id="other-section">
+            <h2 class="project-section-title">Additional Projects / Experiments</h2>
+            <p class="section-subtitle">Small games, scripts, and past projects</p>
+            <div id="other-projects-container" class="tiles"></div>
+        </section>
 
-                <div class="tile">
-                    <img src="images/CTRL+STYLE_Project_Image.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Android Ecommerce Application Using Google Firebase</h2>
-                        <h3>February - May 2025</h3>
-                        <p>
-                            • Led a team of 7 to design and develop an Android e-commerce application as part of semester long project for CS533 Mobile Application Development at Southeast Missouri State University.<br>
-                            • Developed a fully functional e-commerce application in Android Studio using Google Firebase as the backend.<br>
-                            • Implemented user authentication, custom icon and splash screens, product listings, product details, a shopping cart, a checkout page, an orders page, a user list, and a user analytics page.<br>
-                            • Retrieved and modified all data for each app instance from a centralized Firebase database.<br>.
-                        </p>   
-                    </div>
-                    <div class="tile-btn-container">
-                        <a href="media/CTRL+STYLE_Complete_Presentation.pdf">
-                            <button class="tile-btn">PowerPoint</button>
-                        </a>
-                        <a href="media/CTRL+STYLE_Screenshots.pdf">
-                            <button class="tile-btn">Screenshots</button>
-                        </a>
-                        <a href="https://youtu.be/8tzcmoxgkvM">
-                            <button class="tile-btn">Presentation</button>
-                        </a>
-                        <a href="https://github.com/KySchwartz/TheAppvengers_CS533_ECommerceAndroidApp">
-                            <button class="tile-btn">View Code</button>
-                        </a>
-                    </div>
-                </div>
+        <!-- Empty Search State Message -->
+        <div id="no-results" class="no-results" style="display: none;">
+            <p>No projects match your search query.</p>
+        </div>
 
-                <div class="tile">
-                    <img src="images/blank.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Python Django Website Hosted on Amazon EC2 Instance</h2>
-                        <h3>November - December 2024</h3>
-                        <p>
-                            • Worked on a team of 5 to develop a Python Django website hosted on an Amazon EC2 instance.<br>
-                            • Designed web pages using wireframes, and implemented a responsive web design using HTML, CSS, and JavaScript.<br>  
-                            • Helped to structure the backend data structures using Django's built in features.<br>
-                            • Implemented user authentication and account management for placing orders. <br>
-                            • Collaborated with team members to integrate front-end and back-end components.<br>
-                            • Deployed the website on an Amazon EC2 instance, ensuring proper configuration and security settings.<br>
-                            • The website could then be accessed at a public IP address with user authentication restricting access to specified resources.<br>
-                            • Due to the free trial ending, the website is no longer accessible on an Amazon EC2 instance, but the archived files from that EC2 instance can be found by clicking the "View Amazon EC2 Files" button below.<br>
-                        </p>   
-                    </div>
-                    <div class="tile-btn-container">
-                        <a href="media/CS506_eCommerce_Final_Complete_Presentation.pdf">
-                            <button class="tile-btn">Presentation</button>
-                        </a>
-                        <a href="https://github.com/KySchwartz/CS506-Final-Project">
-                            <button class="tile-btn">View Amazon EC2 Files</button>
-                        </a>
-                        <a href="https://github.com/brdane/CS506">
-                            <button class="tile-btn">View Project Developmental Files</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/blank.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Binary Classification of Poisonous Mushrooms</h2>
-                        <h3>November - December 2024</h3>
-                        <p>
-                            • Worked in a team of five to analyze and cleanse a 3,116,945-row dataset with 22 features.<br>  
-                            • Developed XGBoost, Logistic Regression, and Random Forest predictive machine learning models.<br>
-                            • Analyzed the effectiveness of the models against testing data using Python data visualization libraries such as Matplotlib to visually display the results in a Jupyter Notebook.<br>
-                            • Determined the Random Forest model was the most accurate by using quantatative measurements such as accuracy, precision, recall, and F1 Score to determine that the model had a consistent accuracy of 99%.<br>
-                        </p>   
-                    </div>
-                    <div class="tile-btn-container">
-                        <a href="media/2024-12-03 - Final Project Report.pdf">
-                            <button class="tile-btn">Document</button>
-                        </a>
-                        <a href="media/CS505_Final_PowerPoint.pdf">
-                            <button class="tile-btn">Presentation</button>
-                        </a>
-                        <a href="https://github.com/KySchwartz/Binary-Classification-of-Poisonous-Mushrooms">
-                            <button class="tile-btn">Jupyter Notebook</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/cs440-final-img.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>SQL Database and Eccomerce Website Design</h2>
-                        <h3>October - December 2024</h3>
-                        <p>
-                            <!--While leading a team that was taking a course in database design, I decided to take the final project a step furthur.  After my team and I created the necessary documents and finished setting up the MySQL database, we decided to 
-                            create forms using HTML, CSS, JavaScript, and PHP that could read from and write to the database over a local hosting server.  The project showcased a simple yet effective design for linking a well structured database to a frontend website.-->
-                            •	Lead a team of four to develop a MySQL database with 10 tables using SQL on a local host server.<br>
-                            •	Designed and implemented a frontend website using HTML, CSS, and JavaScript, with PHP alongside SQL sequences and triggers on the backend to allow users to view and modify database records from a browser.<br>
-                            •	Drafted formal documentation including an E-R Diagram, Relational Schema, Data Type chart, and CRUD Matrix. <br>
-                        </p>
-                     <!--  <a href="SplashDashWebGLBuild/index.html">
-                            <button class="tile-btn">Play Splash Dash!</button>
-                        </a> -->
-                        
-                    </div>
-                    <div class="tile-btn-container">
-                        <a href="https://github.com/KySchwartz/SQL-Squad_CS440_Final-Project">
-                            <button class="tile-btn">View Code</button>
-                        </a>
-                        <a href="media/SQL Squad_CS404_Final Project Document.pdf">
-                            <button class="tile-btn">View Project Document</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/splashdashlogo.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Formal Usability Testing of Splash Dash</h2>
-                        <h3>May 2024</h3>
-                        <p>After completing my Splash Dash game, I conducted formal usability testing to make improvements.  This included creating a test plan, recruiting participants, and conducting the tests.  The testing was conducted with 5 participants who were asked to complete a series of tasks while thinking aloud.  The results of the tests were then analyzed and used to improve the game.
-                        </p>
-                     <!--  <a href="SplashDashWebGLBuild/index.html">
-                            <button class="tile-btn">Play Splash Dash!</button>
-                        </a> -->
-                        <a href="media/Kyle Schwartz_IS420_Final HCI Project.pdf">
-                            <button class="tile-btn">View Test Document</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/splashdashlogo.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Splash Dash</h2>
-                        <h3>February 2024 - May 2024</h3>
-                        <p>Made as part of my course IS360, Splash Dash was my first intro into game development using the Unity Game Engine.  As the course progresses, however, I got a little carried away.  
-                            At the time of it's "completion" Splash Dash included an array of features including character selection, level selection, and mobile UI controls.  The game featured voice actors for 
-                            each character and was completly hand-drawn and then scanned into Paint3D using a scanner to give the characters a classic cartoon feel.  Each character is animated as well.  Most of the game is coded using C#.  The game was made to 
-                            help raise awarness of the growing problem of pollution.  Playing as an array of different sea creatures the player must collect as much trash as possible before time runs out!  The game has since been deployed in PC, Android, and WebGL formats.<!--<a href="">  More Info page coming soon</a>-->
-                        </p> 
-                    </div>
-                    <div class="tile-btn-container">
-                            <a href="https://github.com/KySchwartz/Splash-Dash">
-                                <button class="tile-btn">View Code</button>
-                            </a>
-                            <a href="projects/SplashDashWebGLBuild/index.html">
-                                <button class="tile-btn">Play Game</button>
-                            </a>
-                        </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/targettaglogo.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Target Tag</h2>
-                    	    <h3>November 2023 - December 2023</h3>
-                        <p>This was my first ever made from scratch, large, programming project.  It was made as a collaboration with two other students, but it went far beyong the 
-                            requirments of the course project.  Target Tag is a JavaFX based game incorporating many features including a computer controlled opponent and randomly moving obstacles.  
-                            The game features several modes for difficulty adjustments and co-op modes.  The goal of the game was to collect 20 randomly spawning targets before your opponents.  
-                            Unfortunantly JavaFX cannot easily be ran in a browser, so this game is only playable through an IDE.  I will hopefully be able to include a downloadable release for the game someday.</p>
-                        <a href="https://github.com/KySchwartz/Target-Tag">
-                            <button class="tile-btn">View Code on GitHub</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/connect4logo.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Connect 4</h2>
-                    	    <h3>September 2024</h3>
-                        <p>A simple Connect4 game using HTML, CSS, and JavaScript.  I usually arrange my projects top down based on date, but this one fit so well 
-                            with the Tic Tac Toe game it just had to go here.  This website was build using personal skills and the integration of AI prompts with 
-                            Microsoft Copilot and Google's Gemini to speed the development process.  I would like to thank Ania Kubow for the basic function starter 
-                            template to this game.  Her repository can be viewed here <a href="https://github.com/kubowania/connect-four/tree/master">https://github.com/kubowania/connect-four/tree/master</a>.
-                        </p>
-                        <a href="projects/Connect4/index.html">
-                            <button class="tile-btn">Play Game</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/tictactoelogo.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Tic Tac Toe</h2>
-                    	    <h3>September 2023</h3>
-                        <p>A simple Tic Tac Toe game using HTML, CSS, and Javascript.</p>
-                        <a href="projects/TicTacToe/TicTacToe.html">
-                            <button class="tile-btn">Play Game</button>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <img src="images/schwartzeebeeswebsitelogo.png" alt="Tile Image">
-                    <div class="tile-info">
-                        <h2>Small Business Website</h2>
-                    	    <h3>September 2022 - November 2022</h3>
-                        <p>This was a demo website I attempted to make for my familys' beekeeping business as part of my first Information Systems course.  This was my first ever experience 
-                            with HTML, CSS, and Javascript.  It was never finished, but I do hope to possibly turn it into an eccomerce site someday.
-                        </p>
-                        <a href="projects/SchwartzeeBeeWebpage6/index.html">
-                            <button class="tile-btn">Visit the Website</button>
-                        </a>
-                    </div>
-                </div>
-
-                
-                
-            </div>
-        	
-        	<figure class="frame">
-                    <a href="https://github.com/KySchwartz"><img src="images/githublogo.png" alt="tba" style = "border: 2px solid black"></a>
-                    <figcaption class="pic-text">GitHub Repositories</figcaption>
-                </figure>
-        	
-        	<div class="title-div">
-        	<h2>Want to see more projects?</h2>
-        		<p>Click below to see the projects that didn't make it to the portfolio</p>
-        	<button class="about-btn" onclick=window.location.href="funstuff.html">Fun Stuff</button>
-        	</div>
-            
-        </main>
+        <figure class="frame">
+            <a href="https://github.com/KySchwartz"><img src="images/githublogo.png" alt="GitHub Logo" style="border: 2px solid black"></a>
+            <figcaption class="pic-text">GitHub Repositories</figcaption>
+        </figure>
+    </main>
 
         <!--Uses a JavaScript function to display footer on server hosted pages-->
         <div w3-include-html="footer.html"></div>
         
-        </div>
+    </div>
     
     <script src="scripts/script.js"></script>
     <script>
-        // Displays the navbar on the page
+        // Displays the navbar and loads project tiles
         includeHTML();
+        loadAndRenderProjectsPage();
     </script>
+
+<!-- Image Zoom Modal Overlay -->
+<div id="image-modal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img" alt="Enlarged View">
+    <div id="modal-caption"></div>
+</div>
 
 </body>
 </html>

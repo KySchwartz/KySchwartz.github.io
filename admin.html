@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Project Manager GUI</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; }
+        h1, h2 { margin-top: 0; color: #2c3e50; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .full-width { grid-column: 1 / -1; }
+        
+        /* List Styles */
+        .project-list { max-height: 600px; overflow-y: auto; padding-right: 10px; }
+        .project-item { display: flex; align-items: center; justify-content: space-between; padding: 12px; margin-bottom: 8px; background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; }
+        .project-item.active { border-left: 4px solid #00c8ff; background: #eefbff; }
+        .project-info { flex-grow: 1; margin-right: 10px; }
+        .project-info h4 { margin: 0 0 4px 0; }
+        .badge { font-size: 0.75rem; padding: 2px 6px; border-radius: 4px; background: #e0e0e0; font-weight: 600; text-transform: uppercase; }
+        .badge.featured { background: #ffd700; color: #333; }
+        .badge.major { background: #00c8ff; color: #fff; }
+        
+        /* Buttons */
+        .btn { padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.85rem; }
+        .btn-primary { background: #00c8ff; color: white; }
+        .btn-success { background: #2ecc71; color: white; }
+        .btn-danger { background: #e74c3c; color: white; }
+        .btn-secondary { background: #95a5a6; color: white; }
+        .btn-sm { padding: 4px 8px; font-size: 0.75rem; margin-left: 2px; }
+
+        /* Form Styles */
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 0.9rem; }
+        input[type="text"], select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.9rem; }
+
+        /* Rich Text Editor Styling */
+        .editor-toolbar { background: #e9ecef; border: 1px solid #ccc; border-bottom: none; border-radius: 4px 4px 0 0; padding: 6px; display: flex; gap: 6px; }
+        .editor-btn { background: white; border: 1px solid #adb5bd; border-radius: 3px; padding: 4px 10px; cursor: pointer; font-weight: bold; font-size: 0.85rem; }
+        .editor-btn:hover { background: #dee2e6; }
+        .editor-content { min-height: 120px; max-height: 250px; overflow-y: auto; border: 1px solid #ccc; border-radius: 0 0 4px 4px; padding: 10px; background: white; font-size: 0.9rem; line-height: 1.5; }
+        .editor-content:focus { outline: none; border-color: #00c8ff; }
+
+        /* Buttons Manager */
+        .button-row { display: flex; gap: 8px; margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Portfolio Project Manager</h1>
+    <p style="text-align: center;">This page was left in the published version for anyone wishing to study how the projects on the website are updated in case you were curious. This form creates the JSON file I use to render the project information. This page is for management and learning purposes only and doesn't have any functionality once the website published. <a href="/index.html">Click here</a> to return to the main website.</p>
+
+    <div class="container">
+        <!-- LEFT: Project List -->
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2>Projects</h2>
+                <button class="btn btn-primary" onclick="createNewProject()">+ Add New</button>
+            </div>
+            <div class="project-list" id="projectList"></div>
+        </div>
+
+        <!-- RIGHT: Edit Form -->
+        <div class="card">
+            <h2 id="formTitle">Edit Project</h2>
+            <form id="projectForm" onsubmit="saveProject(event)">
+                <input type="hidden" id="editIndex" value="-1">
+                
+                <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" id="title" required>
+                </div>
+
+                <div class="form-group" style="display: flex; gap: 10px;">
+                    <div style="flex: 1;">
+                        <label>Category</label>
+                        <select id="category">
+                            <option value="featured">Featured</option>
+                            <option value="major">Major</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div style="flex: 1;">
+                        <label>Date</label>
+                        <input type="text" id="date" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Image Path</label>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="image" placeholder="images/example.png" style="flex: 1;">
+                        <label class="btn btn-secondary" style="margin: 0; display: flex; align-items: center; white-space: nowrap;">
+                            📁 Browse...
+                            <input type="file" id="imagePicker" accept="image/*" style="display: none;" onchange="handleFileSelect(this)">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Technologies (Comma separated)</label>
+                    <input type="text" id="technologies" placeholder="Java, SQL, Docker">
+                </div>
+
+                <!-- Rich Text Description Editor -->
+                <div class="form-group">
+                    <label>Description</label>
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-btn" onclick="formatText('bold')"><b>B</b></button>
+                        <button type="button" class="editor-btn" onclick="formatText('italic')"><i>I</i></button>
+                        <button type="button" class="editor-btn" onclick="insertLink()">🔗 Link</button>
+                        <button type="button" class="editor-btn" onclick="formatText('insertUnorderedList')">• Bullet List</button>
+                    </div>
+                    <div id="descriptionEditor" class="editor-content" contenteditable="true"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Action Buttons</label>
+                    <div id="buttonsContainer"></div>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="addButtonRow()">+ Add Button</button>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="submit" class="btn btn-success" style="flex: 1;">Save Changes</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteCurrentProject()">Delete</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- BOTTOM: Export JSON -->
+        <div class="card full-width">
+            <h2>Export `projects.json`</h2>
+            <p>Choose how you want to save or export your updated portfolio data:</p>
+            
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn btn-success" onclick="overwriteLocalJSON()">⚡ Save Directly to Local File</button>
+                <button class="btn btn-primary" onclick="downloadJSON()">Download projects.json</button>
+                <button class="btn btn-secondary" onclick="copyToClipboard()">Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let projects = [];
+        let selectedIndex = -1;
+
+        function formatText(command) {
+            document.execCommand(command, false, null);
+            document.getElementById('descriptionEditor').focus();
+        }
+
+        function insertLink() {
+            const url = prompt("Enter the URL (e.g. https://github.com):");
+            if (url) {
+                document.execCommand('createLink', false, url);
+            }
+        }
+
+        // Sanitizes HTML from the rich text editor to prevent inline style pollution
+        function cleanDescriptionHTML(rawHtml) {
+            if (!rawHtml) return '';
+
+            // Parse HTML string in memory
+            const doc = new DOMParser().parseFromString(rawHtml, 'text/html');
+
+            // Strip style and class attributes from all elements
+            doc.body.querySelectorAll('*').forEach(el => {
+                el.removeAttribute('style');
+                el.removeAttribute('class');
+            });
+
+            // Flatten block elements (p, div) into standard <br> breaks
+            let cleaned = doc.body.innerHTML;
+            cleaned = cleaned.replace(/<div><br><\/div>/gi, '<br>')
+                             .replace(/<div>/gi, '<br>')
+                             .replace(/<\/div>/gi, '')
+                             .replace(/<p>/gi, '')
+                             .replace(/<\/p>/gi, '<br><br>')
+                             .replace(/&nbsp;/g, ' ');
+
+            // Remove leading line breaks (<br>) at the very start of text
+            cleaned = cleaned.replace(/^(<br\s*\/?>|\s)+/gi, '');
+
+            // Remove trailing line breaks at the end
+            cleaned = cleaned.replace(/(<br\s*\/?>|\s)+$/gi, '');
+
+            return cleaned;
+        }
+
+        function renderList() {
+            const listContainer = document.getElementById('projectList');
+            listContainer.innerHTML = '';
+
+            projects.forEach((p, idx) => {
+                const item = document.createElement('div');
+                item.className = `project-item ${idx === selectedIndex ? 'active' : ''}`;
+                
+                const catClass = p.category === 'featured' ? 'featured' : (p.category === 'major' ? 'major' : '');
+
+                item.innerHTML = `
+                    <div class="project-info" onclick="selectProject(${idx})" style="cursor: pointer;">
+                        <h4>${p.title || 'Untitled'}</h4>
+                        <span class="badge ${catClass}">${p.category || 'other'}</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-secondary btn-sm" onclick="moveProject(${idx}, -1)">▲</button>
+                        <button class="btn btn-secondary btn-sm" onclick="moveProject(${idx}, 1)">▼</button>
+                    </div>
+                `;
+                listContainer.appendChild(item);
+            });
+        }
+
+        function selectProject(index) {
+            selectedIndex = index;
+            const p = projects[index];
+            document.getElementById('editIndex').value = index;
+            document.getElementById('title').value = p.title || '';
+            document.getElementById('category').value = p.category || 'other';
+            document.getElementById('date').value = p.date || '';
+            document.getElementById('image').value = p.image || '';
+            document.getElementById('technologies').value = p.technologies ? p.technologies.join(', ') : '';
+            
+            document.getElementById('descriptionEditor').innerHTML = p.description || '';
+
+            const btnContainer = document.getElementById('buttonsContainer');
+            btnContainer.innerHTML = '';
+            if (p.buttons) {
+                p.buttons.forEach(b => addButtonRow(b.text, b.url));
+            }
+
+            renderList();
+        }
+
+        function createNewProject() {
+            const newProj = {
+                title: "New Project",
+                date: "",
+                category: "other",
+                description: "",
+                buttons: []
+            };
+            projects.unshift(newProj);
+            selectProject(0);
+        }
+
+        function saveProject(e) {
+            e.preventDefault();
+            const idx = parseInt(document.getElementById('editIndex').value);
+            if (idx < 0) return;
+
+            const techStr = document.getElementById('technologies').value;
+            const techArr = techStr ? techStr.split(',').map(t => t.trim()).filter(t => t) : [];
+
+            const btnRows = document.querySelectorAll('.button-row');
+            const buttons = [];
+            btnRows.forEach(row => {
+                const inputs = row.querySelectorAll('input');
+                if (inputs[0].value && inputs[1].value) {
+                    buttons.push({ text: inputs[0].value, url: inputs[1].value });
+                }
+            });
+
+            // Extract raw HTML and process through the sanitizer
+            let descHtml = document.getElementById('descriptionEditor').innerHTML;
+            descHtml = cleanDescriptionHTML(descHtml);
+
+            projects[idx] = {
+                title: document.getElementById('title').value,
+                date: document.getElementById('date').value,
+                image: document.getElementById('image').value,
+                description: descHtml,
+                category: document.getElementById('category').value,
+                ...(techArr.length > 0 && { technologies: techArr }),
+                buttons: buttons
+            };
+
+            renderList();
+            alert('Project saved temporarily! Remember to Download or Direct Save JSON below.');
+        }
+
+        function moveProject(index, direction) {
+            const targetIndex = index + direction;
+            if (targetIndex < 0 || targetIndex >= projects.length) return;
+            
+            const temp = projects[index];
+            projects[index] = projects[targetIndex];
+            projects[targetIndex] = temp;
+
+            if (selectedIndex === index) selectedIndex = targetIndex;
+            else if (selectedIndex === targetIndex) selectedIndex = index;
+
+            renderList();
+        }
+
+        function deleteCurrentProject() {
+            if (selectedIndex < 0) return;
+            if (confirm("Are you sure you want to delete this project?")) {
+                projects.splice(selectedIndex, 1);
+                selectedIndex = -1;
+                renderList();
+            }
+        }
+
+        function addButtonRow(text = '', url = '') {
+            const container = document.getElementById('buttonsContainer');
+            const row = document.createElement('div');
+            row.className = 'button-row';
+            row.innerHTML = `
+                <input type="text" placeholder="Text (e.g. View Code)" value="${text}" style="flex: 1;">
+                <input type="text" placeholder="URL" value="${url}" style="flex: 2;">
+                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">X</button>
+            `;
+            container.appendChild(row);
+        }
+
+        function downloadJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(projects, null, 2));
+            const dlAnchorElem = document.createElement('a');
+            dlAnchorElem.setAttribute("href", dataStr);
+            dlAnchorElem.setAttribute("download", "projects.json");
+            dlAnchorElem.click();
+        }
+
+        function copyToClipboard() {
+            navigator.clipboard.writeText(JSON.stringify(projects, null, 2));
+            alert("JSON copied to clipboard!");
+        }
+
+        function loadLiveProjects() {
+            fetch('projects.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    projects = data;
+                    renderList();
+                    if (projects.length > 0) selectProject(0);
+                })
+                .catch(error => {
+                    console.error('Could not load projects.json:', error);
+                    renderList();
+                    if (projects.length > 0) selectProject(0);
+                });
+        }
+
+        function handleFileSelect(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const imagePath = `images/${file.name}`;
+                document.getElementById('image').value = imagePath;
+            }
+        }
+
+        let fileHandle = null;
+
+        async function overwriteLocalJSON() {
+            const jsonString = JSON.stringify(projects, null, 2);
+
+            try {
+                if (!fileHandle) {
+                    [fileHandle] = await window.showOpenFilePicker({
+                        types: [{
+                            description: 'JSON Files',
+                            accept: { 'application/json': ['.json'] }
+                        }],
+                        multiple: false
+                    });
+                }
+
+                const options = { mode: 'readwrite' };
+                if ((await fileHandle.queryPermission(options)) !== 'granted') {
+                    if ((await fileHandle.requestPermission(options)) !== 'granted') {
+                        alert('Permission denied to update file.');
+                        return;
+                    }
+                }
+
+                const writable = await fileHandle.createWritable();
+                await writable.write(jsonString);
+                await writable.close();
+
+                alert('Successfully saved directly to projects.json!');
+
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    console.error('File System API Error:', err);
+                    alert('Direct saving is not supported or failed in this browser. Use the standard Download button instead.');
+                }
+            }
+        }
+
+        // Initialize
+        loadLiveProjects();
+    </script>
+</body>
+</html>

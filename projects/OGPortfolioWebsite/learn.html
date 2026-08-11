@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- This webpage was created by: Kyle Schwartz -->
+<html lang="en">
+<head>
+	<title>Kyle Schwartz</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico.bmp">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+<body>
+    
+    <div id="container">
+    	
+    	<!--Uses a JavaScript function to display navbar on server hosted pages-->
+    	<div w3-include-html="nav.html"></div>
+
+        <!-- Use the main area to add the main content of the webpage -->
+        <main>
+            
+            <p>This page is currently being developed and may not function correctly, but feel free to look around anyway.</p>
+
+            <h1 class="title-div">Learn</h1>
+          <p>This page is a resource for those learning computer science.  This page contains tips, tricks, and code snippets that have helped me along the way.</p>
+            
+            <div class="tiles">
+                <!--
+                <div class="tile">
+                    <img src="images/wuc.png" alt="Tile Image">
+                    <div class="tile-info">
+                        <h2>Tips and Tricks</h2>
+                    	    <h3>Check Back Later</h3>
+                        <p> 
+                        	   Once finished this is where you can find tips and tricks that might help you on your computer science journey.
+                        	   
+                        </p>
+                        <a href="TargetTagWebApp/index.html">
+                            <button class="tile-btn" disabled>Coming Soon</button>
+                        </a>
+                    </div>
+                </div> -->
+                <div class="tile">
+                    <!--<img src="images/blank.png" alt="Tile Image">-->
+                    <div class="tile-info">
+                        <h2>Easy Header and Footer</h2>
+                    	    <h3>9/5/2025</h3>
+                        <p> 
+                        	   Do you ever get tired of having to manually add and then update a header and footer for every page of your website?<br><br>
+                               Me too!  Especially when wesbites such as those hosted on GitHub pages have limited capabilities when desiging dynamic features.<br><br>
+                               Luckily, there is an easy way to design a single header and footer that works on every page of your site using only JavaScript and HTML.<br>
+                        	   
+                        </p>
+                        <a href="/articles/easy-header-and-footer.html">
+                            <button class="tile-btn">Click Here to Learn More</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <!--<img src="images/blank.png" alt="Tile Image">-->
+                    <div class="tile-info">
+                        <h2>Consider Bullet Points</h2>
+                    	    <h3>9/5/2025</h3>
+                        <p> 
+                        	   Are you considering desinging your own portfolio website like this one?<br><br>
+                               Bullet points may be the way to go when discussing projects.<br>
+                               • Bullet points are quicker for site visitors to read.<br>
+                               • They make it quicker and easier to post new information because you do not need to write entire paragraphs.<br>
+                               • They are commonly used on a resume meaning that the bullet points used describing projects can easily be modified to work in a resume too.<br>
+                               • After learning this while writing my first resume, I am currently in the process of transitioning some of my paragraphs to bullet points on my website.<br><br>
+                               • Remember, your website is your own, so choosing when and how to use bullet points is an important "point" to consider when listing information.
+                        	   
+                        </p>
+                        <a href="TargetTagWebApp/index.html">
+                            <button class="tile-btn" disabled>Coming Soon</button>
+                        </a>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+        </main>
+
+        <!--Uses a JavaScript function to display footer on server hosted pages-->
+        <div w3-include-html="footer.html"></div>
+        
+        </div>
+    
+    <script src="scripts/script.js"></script>
+    <script>
+        // Displays the navbar on the page
+        includeHTML();
+    </script>
+
+</body>
+</html>

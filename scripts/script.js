@@ -6,6 +6,13 @@
 
 //Global variables
 
+function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const menuToggle = document.getElementById('menuToggle');
+    
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+}
 
 //Hamburger menu function
 function hamburger() {
@@ -315,6 +322,8 @@ tabs.forEach(tab => {
   });
 });
 
+
+
 // Server function to display navbar on all pages that do not have one explicitly coded
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
@@ -344,6 +353,266 @@ function includeHTML() {
   }
 };
 
+// Truncates HTML safely without breaking/leaving unclosed tags
+function truncateHTML(html, limit) {
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+
+    let charCount = 0;
+    let truncated = false;
+
+    function walk(node) {
+        if (truncated) return;
+
+        if (node.nodeType === Node.TEXT_NODE) {
+            if (charCount + node.nodeValue.length > limit) {
+                const remaining = limit - charCount;
+                node.nodeValue = node.nodeValue.substring(0, remaining);
+                truncated = true;
+            } else {
+                charCount += node.nodeValue.length;
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            for (let i = 0; i < node.childNodes.length; i++) {
+                walk(node.childNodes[i]);
+                if (truncated) {
+                    // Remove any sibling nodes that come after the truncation point
+                    while (node.childNodes.length > i + 1) {
+                        node.removeChild(node.lastChild);
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
+    walk(temp);
+    return temp.innerHTML;
+}
+
+let allProjects = [];
+
+// Helper function to build tile HTML strings
+function createTileHTML(p) {
+    const charLimit = 1000; // Character limit before truncating
+    const description = p.description || '';
+
+    const textOnlyLength = description.replace(/<[^>]+>/g, '').length;
+    
+    let descriptionHTML = '';
+
+    if (textOnlyLength > charLimit) {
+        const shortText = truncateHTML(description, charLimit);
+        const fullText = description;
+
+        descriptionHTML = `
+            <div class="description-container">
+                <span class="desc-short">
+                    ${shortText}... 
+                    <span class="toggle-desc-text" onclick="toggleDescription(this, true)">see more</span>
+                </span>
+                <span class="desc-full" style="display: none;">
+                    ${fullText} 
+                    <span class="toggle-desc-text" onclick="toggleDescription(this, false)">see less</span>
+                </span>
+            </div>
+        `;
+    } else {
+        descriptionHTML = `<p>${description}</p>`;
+    }
+
+    return `
+        <div class="tile">
+            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="zoomable-img">` : ''}
+            <div class="tile-info">
+                <h2>${p.title || ''}</h2>
+                <h3>${p.date || ''}</h3>
+                
+                ${p.technologies && p.technologies.length > 0 ? `
+                    <div class="tech-stack">
+                        ${p.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                ` : ''}
+
+                ${descriptionHTML}
+
+                ${p.buttons && p.buttons.length > 0 ? `
+                    <div class="tile-btn-container">
+                        ${p.buttons.map(b => `<a href="${b.url}" class="tile-btn" target="_blank">${b.text}</a>`).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    `;
+}
+
+// Toggle function for inline see more / see less
+function toggleDescription(element, expand) {
+    const container = element.closest('.description-container');
+    const shortSpan = container.querySelector('.desc-short');
+    const fullSpan = container.querySelector('.desc-full');
+
+    if (expand) {
+        shortSpan.style.display = 'none';
+        fullSpan.style.display = 'inline';
+    } else {
+        shortSpan.style.display = 'inline';
+        fullSpan.style.display = 'none';
+    }
+}
+
+// RESTORED FUNCTION: Used by index.html to render featured projects
+function loadProjects(containerId, featuredOnly = false) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    fetch('projects.json')
+        .then(response => response.json())
+        .then(projects => {
+            const list = featuredOnly 
+                ? projects.filter(p => p.category === 'featured' || p.featured === true) 
+                : projects;
+
+            container.innerHTML = list.map(createTileHTML).join('');
+        })
+        .catch(err => console.error('Error loading projects:', err));
+}
+
+// FUNCTION: Used on projects.html for 3-category layout & live search
+function loadAndRenderProjectsPage() {
+    fetch('projects.json')
+        .then(response => response.json())
+        .then(projects => {
+            allProjects = projects;
+            renderProjectsPage(allProjects);
+        })
+        .catch(err => console.error('Error loading projects on projects.html:', err));
+}
+
+// Live search handler
+function handleSearch() {
+    const searchInput = document.getElementById('project-search');
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    const filtered = allProjects.filter(p => {
+        const titleMatch = p.title ? p.title.toLowerCase().includes(query) : false;
+        const dateMatch = p.date ? p.date.toLowerCase().includes(query) : false;
+        const descMatch = p.description ? p.description.toLowerCase().includes(query) : false;
+        const techMatch = p.technologies ? p.technologies.some(t => t.toLowerCase().includes(query)) : false;
+
+        return titleMatch || dateMatch || descMatch || techMatch;
+    });
+
+    renderProjectsPage(filtered);
+}
+
+// Render helper for projects.html
+function renderProjectsPage(projectsList) {
+    const featuredContainer = document.getElementById('featured-projects-container');
+    const majorContainer = document.getElementById('major-projects-container');
+    const otherContainer = document.getElementById('other-projects-container');
+
+    const featuredSection = document.getElementById('featured-section');
+    const majorSection = document.getElementById('major-section');
+    const otherSection = document.getElementById('other-section');
+    const noResultsMsg = document.getElementById('no-results');
+
+    if (!featuredContainer || !majorContainer || !otherContainer) return;
+
+    // Filter projects into categories with backward-compatibility fallbacks
+    const featuredList = projectsList.filter(p => p.category === 'featured' || p.featured === true);
+    const majorList = projectsList.filter(p => p.category === 'major');
+    const otherList = projectsList.filter(p => 
+        p.category === 'other' || 
+        (!p.category && !p.featured)
+    );
+
+    // Show/hide sections dynamically
+    if (featuredSection) featuredSection.style.display = featuredList.length > 0 ? 'block' : 'none';
+    if (majorSection) majorSection.style.display = majorList.length > 0 ? 'block' : 'none';
+    if (otherSection) otherSection.style.display = otherList.length > 0 ? 'block' : 'none';
+
+    if (noResultsMsg) noResultsMsg.style.display = (projectsList.length === 0) ? 'block' : 'none';
+
+    // Inject generated HTML
+    featuredContainer.innerHTML = featuredList.map(createTileHTML).join('');
+    majorContainer.innerHTML = majorList.map(createTileHTML).join('');
+    otherContainer.innerHTML = otherList.map(createTileHTML).join('');
+}
+
+// Function to fetch projects and render them into containers dynamically
+/*function loadProjects(containerId, featuredOnly = false) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    fetch('projects.json')
+        .then(response => response.json())
+        .then(projects => {
+            const list = featuredOnly ? projects.filter(p => p.featured) : projects;
+
+            container.innerHTML = list.map(p => `
+                <div class="tile">
+                    ${p.image ? `<img src="${p.image}" alt="${p.title}" class="zoomable-img">` : ''}
+                    <div class="tile-info">
+                        <h2>${p.title}</h2>
+                        <h3>${p.date}</h3>
+                        
+                        ${p.technologies && p.technologies.length > 0 ? `
+                            <div class="tech-stack">
+                                ${p.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                            </div>
+                        ` : ''}
+
+                        <p>${p.description}</p>
+
+                        ${p.buttons && p.buttons.length > 0 ? `
+                            <div class="tile-btn-container">
+                                ${p.buttons.map(b => `<a href="${b.url}" class="tile-btn" target="_blank">${b.text}</a>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        })
+        .catch(err => console.error('Error loading projects:', err));
+}*/
+
+// Makes a modal appear for images with the .zoomable-img class
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const captionText = document.getElementById('modal-caption');
+    const closeBtn = document.querySelector('.modal-close');
+
+    if (!modal) return;
+
+    // Attach click event listener to all images with class 'zoomable-img'
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('zoomable-img')) {
+          modal.style.display = 'block';
+          modalImg.src = e.target.src;
+          captionText.innerHTML = e.target.alt;
+        }
+      });
+    // Close modal when clicking the 'X' button
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close modal when clicking anywhere outside the enlarged image
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === closeBtn) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Close modal when pressing the Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+        }
+    });
+});
 
 
 // Depreceated function used for drop button content pairs using an array index argument

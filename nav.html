@@ -1,34 +1,27 @@
-<header id="news-header" style="display: block;">
-    <h1><a href="/index.html">Computer Information Systems Major</a></h1>
-</header>
+    <!-- News Banner -->
+    <div class="news-banner">
+        <span>CIS Major — Software Development & Data Analytics</span>
+    </div>
 
-<!-- Mobile Nav -->
-<nav class="mobile-nav">
- <div id="menu-links">
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/projects.html">Projects</a>
-    <a href="/learn.html">Learn</a>
-    <a href="/contact.html">Contact</a>
-</div>
-<a class="menu-icon" onclick="hamburger()">
-    <div>&#9776;</div>
-</a>
-</nav>
+    <!-- Responsive Navigation -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="/index.html" class="brand-logo">Kyle Schwartz</a>
 
-<!-- Use the header area for the website name or logo -->
-<header id="schwartzee-logo">
-    <h1><a href="/index.html"><img src="/images/logo.png" alt="logo"></a></h1>
-</header>
+            <!-- Animated Hamburger Button -->
+            <button class="hamburger-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu" id="menuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
 
-<!-- Tablet, Desktop Nav -->
-<nav class="tablet-desktop">
-<ul>
-    <a href="/index.html"><li><img src="/images/logo.png" class="brand-logo" alt=""></li></a>
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/projects.html">Projects</a></li>
-    <li><a href="/learn.html">Learn</a></li>
-    <li><a href="/contact.html">Contact</a></li>
-</ul>
-</nav>
+            <!-- Navigation Links -->
+            <div class="nav-menu" id="navMenu">
+                <a href="/index.html" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/projects.html" class="nav-link">Projects</a>
+                <!--<a href="/learn.html" class="nav-link">Learn</a>-->
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>

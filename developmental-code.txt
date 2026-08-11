@@ -1,0 +1,37 @@
+            <!-- EXPERIENCE CARD 1 -->
+            <div class="exp-card">
+                <!-- Header Row: Small Logo + Title/Meta -->
+                <div class="exp-header">
+                    <img src="images/semo-logo.png" alt="SEMO Logo" class="zoomable-img exp-logo">
+                    <div class="exp-header-text">
+                        <h3>Culmulative 4.0 GPA (Summa Cum Laude)</h3>
+                        <h4>Southeast Missouri State University</h4>
+                        <span class="exp-date">Graduated May 2026</span>
+                    </div>
+                </div>
+                <!-- Body Text: Spans full width below header -->
+                <!--<div class="exp-body">
+                    <p>
+                        This is example text
+                    </p>
+                </div>-->
+            </div>
+
+            <!-- EXPERIENCE CARD 2 -->
+            <div class="exp-card">
+                <!-- Header Row: Small Logo + Title/Meta -->
+                <div class="exp-header">
+                    <img src="images/semo-logo.png" alt="SEMO Logo" class="zoomable-img exp-logo">
+                    <div class="exp-header-text">
+                        <h3>SEMO President's and Dean's List</h3>
+                        <h4>Southeast Missouri State University</h4>
+                        <span class="exp-date">Fall 2022 - Spring 2026</span>
+                    </div>
+                </div>
+                <!-- Body Text -->
+                <!--<div class="exp-body">
+                    <p>
+                        This is example test
+                    </p>
+                </div>-->
+            </div>
