@@ -1180,12 +1180,19 @@ span.toggle-desc-text:hover {
     max-width: 100%;
 }
 
+.about-image-wrapper {
+    order: -1;
+}
+
 @media screen and (min-width: 768px) {
     .about-grid {
         flex-direction: row;
     }
     .about-text, .about-image-wrapper {
         flex: 1;
+    }
+    .about-image-wrapper {
+        order: 1;
     }
 }
 
